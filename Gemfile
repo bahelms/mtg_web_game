@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass', '~> 3.2'
 gem 'coffee-rails', '~> 4.0.0'
 # gem 'devise', '~> 3.3.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'lm-rails-4-2'
+gem 'haml-rails', '~> 0.5'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'pg', '~> 0.17.1'
@@ -24,7 +26,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '~> 2.4.1'
+  gem 'factory_girl_rails', '~> 4.4.1'
   gem 'rspec-rails', '~> 3.1.0'
 end
 
