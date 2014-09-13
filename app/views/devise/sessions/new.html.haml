@@ -1,13 +1,19 @@
-%h2 Sign In
+.login_container
+  %h2 Sign In
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  %div= f.email_field :email, autofocus: true, placeholder: "Email"
-  %div= f.password_field :password, autocomplete: "off", placeholder: "Password"
-  - if devise_mapping.rememberable?
+  = form_for(resource, as: resource_name, url: session_path(resource_name), 
+    html: { class: "login" }) do |f|
     %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign In"
+      = f.label :email, "Email:"
+      = f.email_field :email, autofocus: true, id: "email_login"
+    %div
+      = f.label :password, "Password:"
+      = f.password_field :password, autocomplete: "off", id: "password_login"
+    - if devise_mapping.rememberable?
+      %div
+        = f.check_box :remember_me
+        = f.label :remember_me
+    %div= f.submit "Sign In"
 
-= render "devise/shared/links"
+  = render "devise/shared/links"
 
