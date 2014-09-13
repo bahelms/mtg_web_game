@@ -1,0 +1,13 @@
+%header
+  %nav.navbar.navbar-inverse
+    .navbar-inner
+      .container-fluid
+        %ul.nav.navbar-nav
+          = link_to "Lobby", root_path, class: "navbar-brand"
+          = link_to "Deck Builder", "#", class: "navbar-brand"
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to "Account", edit_user_registration_path(current_user)
+          %li
+            = link_to "Sign Out", destroy_user_session_path, method: :delete
+    

@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title MtgWebGame
+    = stylesheet_link_tag "application", media: "all", 
+      data: { "turbolinks-track" => true }
+    = javascript_include_tag "application", data: { "turbolinks-track" => true }
+    = csrf_meta_tags
+
+  %body
+    - if user_signed_in?
+      = render "layouts/header"
+    .container
+      - flash.each do |key, value|
+        = flash_content(key, value)
+      = yield
+

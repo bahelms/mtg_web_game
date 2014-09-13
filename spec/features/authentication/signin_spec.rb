@@ -15,16 +15,6 @@ feature "Signing in with an existing account" do
       sign_in_with email: user.email, password: user.password
       expect(page).not_to have_content("Invalid email or password")
     end
-
-    feature "Signing out of a valid session" do
-      background do
-        sign_in_with email: user.email, password: user.password
-        click_link "Sign Out"
-      end
-
-      it { should_not have_link "Sign Out" }
-      it { should have_button "Sign In" }
-    end
   end
 
   context "with invalid email or password" do
