@@ -10,38 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import base
+@import users
+@import bootstrap-sprockets
+@import bootstrap
 
-body {
-  background-color: #373737;
-  input {
-    &:focus {
-      outline: none;
-    }
-  }
-  .dark_button {
-    color: #4C85CF;
-    background: -webkit-linear-gradient(#373737, black);
-    background: -moz-linear-gradient(#373737, black);
-    background: linear-gradient(#373737, black);
-    border-radius: 5px;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    height: 25px;
-    padding: 2px 6px 3px 6px;
-  }
-  a {
-    &:focus {
-      color: #428bca;
-    }
-  }
-}
-
+body 
+  background-color: #1c1c1c
+  input 
+    &:focus 
+      outline: none
+  a 
+    &:focus
+      color: #428bca
 
