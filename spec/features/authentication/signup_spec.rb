@@ -7,7 +7,7 @@ feature "Signing up for a new account" do
 
   background do
     visit root_path
-    click_link "Sign Up"
+    click_link "New Account"
   end
 
   it { should have_content("Create Account") }

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def flash_type(key)
-    case key
+    case key.to_sym
     when :alert then :warning
     when :notice then :success
     when :error then :danger

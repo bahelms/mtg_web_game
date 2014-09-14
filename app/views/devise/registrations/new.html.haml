@@ -1,19 +1,23 @@
-%h2 Create Account
+.dark_form_container
+  %h2 Create Account
 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %div= f.text_field :username, autofocus: true, placeholder: "Username"
-  %div= f.email_field :email, placeholder: "Email"
-  %div
-    - if @validatable
-      %i "(#{@minimum_password_length} characters minimum)"
-    %br
-    = f.password_field :password, autocomplete: "off", placeholder: "Password"
+  = form_for(resource, as: resource_name, 
+    url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %div= f.text_field :username, autofocus: true, placeholder: "Username",
+      class: "text_input"
+    %div= f.email_field :email, placeholder: "Email", class: "text_input"
+    %div
+      - if @validatable
+        %i "(#{@minimum_password_length} characters minimum)"
+      %br
+      = f.password_field :password, autocomplete: "off", placeholder: "Password",
+        class: "text_input"
 
-  %div
-    = f.password_field :password_confirmation, autocomplete: "off", 
-      placeholder: "Confirm password"
-  %div= f.submit "Sign Up"
+    %div
+      = f.password_field :password_confirmation, autocomplete: "off", 
+        placeholder: "Confirm password", class: "text_input"
+    %div= f.submit "Create Account"
 
-= render "devise/shared/links"
+  = render "devise/shared/links"
 

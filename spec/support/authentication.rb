@@ -5,7 +5,7 @@ def signup_with(options)
   fill_in "Email", with: options[:email]
   fill_in "Password", with: options[:password]
   fill_in "Confirm password", with: confirm
-  click_button "Sign Up"
+  click_button "Create Account"
 end
 
 def sign_in_with(options)
