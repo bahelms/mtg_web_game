@@ -10,8 +10,7 @@
   %body
     - if user_signed_in?
       = render "layouts/header"
-    .container
-      - flash.each do |key, value|
-        = flash_content(key, value)
-      = yield
+    - flash.each do |key, value|
+      = flash_content(key, value)
+    = yield
 

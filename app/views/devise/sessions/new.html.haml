@@ -4,16 +4,19 @@
   = form_for(resource, as: resource_name, url: session_path(resource_name), 
     html: { class: "login" }) do |f|
     %div
-      = f.label :email, "Email:"
-      = f.email_field :email, autofocus: true, id: "email_login"
+      = f.email_field :email, autofocus: true, id: "email_login", 
+        class: "login_input", placeholder: "email"
     %div
-      = f.label :password, "Password:"
-      = f.password_field :password, autocomplete: "off", id: "password_login"
-    - if devise_mapping.rememberable?
-      %div
+      = f.password_field :password, autocomplete: "off", id: "password_login", 
+        class: "login_input", placeholder: "password"
+    %div
+      - if devise_mapping.rememberable?
         = f.check_box :remember_me
-        = f.label :remember_me
-    %div= f.submit "Sign In"
+        = f.label :remember_me, id: "remember_me_label"
+      = button_tag "Sign In", class: "btn dark_button"
 
-  = render "devise/shared/links"
+    -# = link_to "Sign Up", new_registration_path(resource_name), 
+    -#   class: "btn dark_button"
+
+  -# = render "devise/shared/links"
 
