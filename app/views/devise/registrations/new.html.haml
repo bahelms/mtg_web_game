@@ -1,4 +1,4 @@
-.dark_form_container
+.dark_form_container#create_account
   %h2 Create Account
 
   = form_for(resource, as: resource_name, 
@@ -8,7 +8,7 @@
     %div= f.email_field :email, placeholder: "Email", class: "text_input"
     %div
       - if @validatable
-        %i "(#{@minimum_password_length} characters minimum)"
+        %i (#{@minimum_password_length} characters minimum)
       %br
       = f.password_field :password, autocomplete: "off", placeholder: "Password",
         class: "text_input"

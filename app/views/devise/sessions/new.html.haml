@@ -17,3 +17,7 @@
     = link_to "New Account", new_registration_path(resource_name), 
       class: "btn"
 
+#login_flash_messages
+  - flash.each do |key, value|
+    = flash_content(key, value)
+
