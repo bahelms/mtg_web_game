@@ -19,7 +19,7 @@ feature "Signing up for a new account" do
   context "with valid input" do
     scenario "creates a new account if email and password are valid" do
       signup_with email: "heybob@foobar.com", password: "@123abc!", username: "bob"
-      expect(subject).to have_content("Welcome! You have signed up successfully.")
+      expect(subject).to have_content("Lobby")
     end
   end
 
@@ -47,6 +47,11 @@ feature "Signing up for a new account" do
     scenario "notifies user if username is absent" do
       signup_with email: "heybob@foobar.com", password: "@123abc!", username: nil
       expect(subject).to have_content("Username can't be blank")
+    end
+
+    scenario "notifies user if password is less 8 characters" do
+      signup_with email: "example@foo.com", password: "1234567"
+      expect(subject).to have_content("Password is too short")
     end
   end
 end
