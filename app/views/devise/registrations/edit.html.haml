@@ -4,7 +4,8 @@
       #edit_account
         %h2 Edit Account
 
-        = form_for(resource, as: resource_name, url: registration_path(resource_name), 
+        = form_for(resource, 
+          as: resource_name, url: registration_path(resource_name), 
           html: { method: :put }) do |f|
           = devise_error_messages!
 
@@ -13,7 +14,8 @@
           %div
             %i (leave blank if you don't want to change it)
             %br
-            = f.password_field :password, autocomplete: "off", placeholder: "Password"
+            = f.password_field :password, autocomplete: "off", 
+              placeholder: "New Password"
           %div
             = f.password_field :password_confirmation, autocomplete: "off", 
               placeholder: "Confirm Password"
