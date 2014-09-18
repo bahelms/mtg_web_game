@@ -2,10 +2,10 @@
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     %div
       = f.email_field :email, autofocus: true, id: "email_login", 
-        class: "text_input", placeholder: "email"
+        placeholder: "email"
     %div
       = f.password_field :password, autocomplete: "off", id: "password_login", 
-        class: "text_input", placeholder: "password"
+        placeholder: "password"
     %div
       - if devise_mapping.rememberable?
         = f.check_box :remember_me

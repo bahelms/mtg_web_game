@@ -5,23 +5,26 @@
   background: black
   padding: 5px 5px 5px 5px
   border-radius: 10px
+  color: #858485 
 
   div
     margin: 0 0 10px 20px
-  h2
+  h2, h3
     text-align: center
     margin-top: 10px
-  h2, label
+  h2, h3, label
     color: #a8a7a8
-
   label, input
     font-weight: 300
     font-size: 15px
-
   form
     margin-top: 15px
+  i
+    color: #858485 
+    font-size: 12px
+    margin-left: 5px
 
-  .text_input
+  input:not([type="submit"]):not([type="checkbox"])
     color: #bbb
     background: #373737
     padding: 0 10px
@@ -49,12 +52,7 @@
   a
     font-size: 12px
   margin: 5px auto
-  width: 255px
-
-#new_account_button
-  +dark_button
-  margin: 5px 0 0 50px
-  width: 150px
+  max-width: 255px
 
 #login_flash_messages
   margin: 0 auto
@@ -64,13 +62,26 @@
 
 #create_account
   @extend .dark_form_container
-  i
-    color: #858485 
-    font-size: 12px
-    margin-left: 5px
+  #new_account_button
+    +dark_button
+    margin: 5px 0 0 50px
+    max-width: 150px
 
 #edit_account
   @extend .dark_form_container
+  margin: 20px 0 0 -20px
+  #edit_account_button
+    +dark_button
+
+#cancel_account
+  @extend .dark_form_container
+  p
+    text-align: center
+  form
+    margin: 15px auto
+    max-width: 150px
+    input[type="submit"]
+      +dark_button
 
 .error_explanations
   margin: 50px auto

@@ -3,19 +3,16 @@
 
   = form_for(resource, as: resource_name, 
     url: registration_path(resource_name)) do |f|
-    %div= f.text_field :username, autofocus: true, placeholder: "Username",
-      class: "text_input"
-    %div= f.email_field :email, placeholder: "Email", class: "text_input"
+    %div= f.text_field :username, autofocus: true, placeholder: "Username"
+    %div= f.email_field :email, placeholder: "Email"
     %div
       - if @validatable
         %i (#{@minimum_password_length} characters minimum)
       %br
-      = f.password_field :password, autocomplete: "off", placeholder: "Password",
-        class: "text_input"
-
+      = f.password_field :password, autocomplete: "off", placeholder: "Password"
     %div
       = f.password_field :password_confirmation, autocomplete: "off", 
-        placeholder: "Confirm password", class: "text_input"
+        placeholder: "Confirm password"
     %div= f.submit "Create Account", class: "btn", id: "new_account_button"
 
 = devise_error_messages!
