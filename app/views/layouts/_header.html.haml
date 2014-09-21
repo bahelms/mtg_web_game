@@ -7,7 +7,7 @@
           = link_to "Deck Builder", "#", class: "navbar-brand"
         %ul.nav.navbar-nav.navbar-right
           %li
-            = link_to "Account", edit_user_registration_path(current_user)
+            = link_to "Profile", user_path(current_user)
           %li
             = link_to "Sign Out", destroy_user_session_path, method: :delete
     

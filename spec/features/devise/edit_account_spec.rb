@@ -6,9 +6,10 @@ feature "Editing account settings" do
   subject { page }
 
   background do
-    visit root_path
+    # visit root_path
     sign_in_with email: user.email, password: user.password
-    click_link "Account"
+    click_link "Profile"
+    click_link "Edit Account"
   end
 
   it { should have_content("Edit Account") }

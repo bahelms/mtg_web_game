@@ -13,4 +13,3 @@ This app is my homemade, free version of MTG Online.
 * Deck builder
 * Game engine
 
-
