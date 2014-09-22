@@ -18,9 +18,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks', '~> 2.3.0'
 gem 'uglifier', '>= 1.3.0'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
 group :development, :test do
   gem 'byebug', '~> 3.4.0'
   gem 'spring', '~> 1.1.3'
