@@ -12,6 +12,8 @@ feature "Reseting password" do
 
   scenario "sends the user an email with a reset password link" do
     fill_in "Email", with: user.email
-    click_button "Send reset password instructions"
+    expect {
+      click_button "Send reset password instructions"
+    }.to change(ActionMailer::Base.deliveries, :count).by(1)
   end
 end

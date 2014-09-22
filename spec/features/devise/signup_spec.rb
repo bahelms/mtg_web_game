@@ -18,6 +18,12 @@ feature "Signing up for a new account" do
 
   context "with valid input" do
     scenario "creates a new account if email and password are valid" do
+      expect {
+        signup_with email: "heybob@foobar.com", password: "@123abc!", username: "bob"
+      }.to change(User, :count).by(1)
+    end
+
+    scenario "redirects to Lobby" do
       signup_with email: "heybob@foobar.com", password: "@123abc!", username: "bob"
       expect(subject).to have_content("Lobby")
     end
