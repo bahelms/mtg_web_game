@@ -6,8 +6,7 @@ feature "Editing account settings" do
   subject { page }
 
   background do
-    # visit root_path
-    sign_in_with email: user.email, password: user.password
+    sign_in(user)
     click_link "Profile"
     click_link "Edit Account"
   end
@@ -21,14 +20,14 @@ feature "Editing account settings" do
       let(:new_email) { "new_email@foo.com"}
 
       scenario "successfully updates email" do
-        update_user email: new_email, password: user.password
+        update_user(email: new_email, password: user.password)
         expect(user.reload.email).to eq new_email
       end
     end
 
     context "with invalid input" do
       scenario "does not update email" do
-        update_user email: nil, password: user.password
+        update_user(email: nil, password: user.password)
         expect(subject).to have_content("Email can't be blank")
       end
     end
@@ -40,9 +39,9 @@ feature "Editing account settings" do
     end
 
     context "with valid input" do
-      scenario "successfully updates password" do
+      scenario "redirects to profile page" do
         update_user(options)
-        expect(subject).to have_content("Build a profile page to test here")
+        expect(subject).to have_link("Edit Account")
       end
     end
 
