@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', '~> 0.11.0', groups: [:development, :test]
+
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2'
 gem 'coffee-rails', '~> 4.0.0'

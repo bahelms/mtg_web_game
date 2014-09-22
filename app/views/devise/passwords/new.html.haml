@@ -1,16 +1,11 @@
-#reset_password
-  %h2 
-    Forgot your password?
+.password_reset
+  %h2 Forgot your password?
 
   = form_for(resource, as: resource_name, url: password_path(resource_name), 
     html: { method: :post }) do |f|
     = devise_error_messages!
 
-    %div
-      = f.email_field :email, autofocus: true, placeholder: "Email"
-
-    %div
-      = f.submit "Send reset password instructions", 
-        id: "reset_password_button"
+    %div= f.email_field :email, autofocus: true, placeholder: "Email"
+    %div= f.submit "Send reset password instructions"
 
   = render "devise/shared/links"
