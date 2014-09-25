@@ -28,7 +28,9 @@ feature "Reseting password" do
 
   context "with nonexistant email address" do
     scenario "displays error message" do
-      pending
+      fill_in "Email", with: "heybobbyjoe@dotcom.com"
+      click_button "Send reset password instructions"
+      expect(subject).to have_content("Email not found")
     end
   end
 end
