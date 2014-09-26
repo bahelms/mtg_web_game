@@ -1,13 +1,25 @@
 #lobby_chat
-  // color: white
+  margin-bottom: 50px
+
   textarea
     +box_sizing_border_box
+    +box_shadow
     resize: none
-    background-color: black
+    background-color: #171717
     color: white
     border-radius: 10px
     border: 1px solid black
 
   #lobby_chat_input
-    width: 834px
+    +no_box_shadow
+    border-radius: 0
+    width: 787px
+    height: 55px
+    padding: 5px 10px
+
+  #chat_submit
+    +dark_button(#171717, 0%)
+    position: absolute
+    border-radius: 0
+    height: 55px
 
