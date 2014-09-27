@@ -6,7 +6,7 @@ feature "Editing account settings" do
   subject { page }
 
   background do
-    sign_in(user)
+    sign_in user
     click_link "Profile"
     click_link "Edit Account"
   end
