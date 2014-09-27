@@ -18,6 +18,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "thin", "~> 1.6.2"
 gem "turbolinks", "~> 2.3.0"
 gem "uglifier", ">= 1.3.0"
+gem "websocket-rails", "~> 0.7.0"
 
 group :development, :test do
   gem "byebug", "~> 3.4.0"
