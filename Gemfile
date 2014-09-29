@@ -13,6 +13,7 @@ gem "jquery-rails"
 gem "pg", "~> 0.17.1"
 gem "rails", "4.2.0.beta1"
 gem "rails-html-sanitizer", "~> 1.0"
+gem "role-rails", "~> 1.4.0"
 gem "sass-rails", "~> 5.0.0.beta1"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "thin", "~> 1.6.2"
