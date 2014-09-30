@@ -3,7 +3,7 @@ require "support/authentication"
 require "support/lobby_chat"
 
 feature "Talking to users in the lobby chat room" do
-  let(:user) { create(:user, username: "Xmus Waxon") }
+  given(:user) { create(:user, username: "Xmus Waxon") }
   subject { page }
   background { sign_in user }
 

@@ -2,7 +2,7 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Signing out of a valid session" do
-  let(:user) { create(:user) }
+  given(:user) { create(:user) }
   subject { page }
 
   background do

@@ -2,7 +2,7 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Visit profile" do
-  let(:user) { create(:user, username: "Tiberius") }
+  given(:user) { create(:user, username: "Tiberius") }
   subject { page }
 
   background do

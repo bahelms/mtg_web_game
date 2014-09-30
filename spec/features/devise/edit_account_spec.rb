@@ -2,7 +2,7 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Editing account settings" do
-  let(:user) { create(:user) }
+  given(:user) { create(:user) }
   subject { page }
 
   background do
@@ -17,7 +17,7 @@ feature "Editing account settings" do
 
   feature "changing user email" do
     context "with valid input" do
-      let(:new_email) { "new_email@foo.com"}
+      given(:new_email) { "new_email@foo.com"}
 
       scenario "successfully updates email" do
         update_user(email: new_email, password: user.password)
@@ -34,7 +34,7 @@ feature "Editing account settings" do
   end
 
   feature "changing user password" do
-    let(:options) do
+    given(:options) do
       { email: user.email, password: user.password, new_password: "@123!123" }
     end
 

@@ -2,7 +2,7 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Signing up for a new account" do
-  let(:old_user) { create(:user) }
+  given(:old_user) { create(:user) }
   subject { page }
 
   background do
