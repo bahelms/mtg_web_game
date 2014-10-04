@@ -7,8 +7,8 @@ feature "Signing in with an existing account" do
   background { visit root_path }
 
   it { should have_content("Sign In") }
-  it { should have_field("Email") }
-  it { should have_field("Password") }
+  it { should have_field("email") }
+  it { should have_field("password") }
 
   context "with valid input" do
     scenario "successfully signs in user if email and password are valid" do

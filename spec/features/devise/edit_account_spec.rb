@@ -13,7 +13,7 @@ feature "Editing account settings" do
 
   it { should have_content("Edit Account") }
   it { should have_field("Email") }
-  it { should have_field("Current password") }
+  it { should have_field("Current Password") }
 
   feature "changing user email" do
     context "with valid input" do
