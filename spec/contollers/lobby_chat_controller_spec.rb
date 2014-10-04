@@ -14,15 +14,10 @@ describe "LobbyChatController" do
     end
   end
 
-  describe "test_event" do
-    it "routes to lobby_chat#test_event" do
-      expect(create_event("test_event", nil)).
-        to be_routed_only_to "lobby_chat#test_event"
-    end
-
-    it "triggers a success message" do
-      expect(create_event("test_event", nil).dispatch).
-        to trigger_message
+  describe "new_message" do
+    it "routes to lobby_chat#new_message" do
+      expect(create_event("new_message", message: "New Message")).
+        to be_routed_only_to "lobby_chat#new_message"
     end
   end
 end

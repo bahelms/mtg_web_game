@@ -5,16 +5,31 @@ jQuery ->
 class LobbyChatController
   constructor: ->
     @$lobbyChatBox = $("@lobby_chat_box")
+    @$lobbyUsers = $("@lobby_users")
+    @$lobbyChatInput = $("@lobby_chat_input")
+    @$submitButton = $("@chat_submit")
     @dispatcher = new WebSocketRails("localhost:3000/websocket")
+    @onConnection()
     @bindEvents()
     @setupTriggers()
 
+  onConnection: ->
+    @dispatcher.on_open = =>
+      @$lobbyChatBox.append("Welcome to Lobby Chat")
+
   bindEvents: ->
-    @connectionSuccess(@)
+    @newUserJoinedChat()
+    @addNewMessage()
 
   setupTriggers: ->
+    @$submitButton.click =>
+      @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
 
-  connectionSuccess: (self) ->
-    @dispatcher.bind "connection_success", (response) ->
-      self.$lobbyChatBox.append(response.message)
+  addNewMessage: ->
+    @dispatcher.bind "add_new_message", (response) =>
+      @$lobbyChatBox.append("\n#{response.message}")
+
+  newUserJoinedChat: ->
+    @dispatcher.bind "new_user_joined_chat", (response) =>
+      @$lobbyUsers.val(response.users_list)
 
