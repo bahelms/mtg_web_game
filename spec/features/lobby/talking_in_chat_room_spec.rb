@@ -13,12 +13,10 @@ feature "Talking to users in the lobby chat room" do
     expect(subject).to have_selector("lobby_users", text: user.username)
   end
 
-  scenario "typing text and pressing Send updates the chat text area", focus: true do
+  scenario "typing text and pressing Send updates the chat text area", js: true, focus: true do
     text = "Hey there Sally Jones!"
     send_message text
-    sleep 2
-    expect(find_by_id("lobby_chat_box").value).to have_content(text)
-    # expect(subject).to have_selector("lobby_chat_box", text: text)
+    expect(subject).to have_selector("lobby_chat_box", text: text)
   end
 
   scenario "sending a message displays the sender's username" do

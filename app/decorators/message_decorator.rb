@@ -1,0 +1,3 @@
+class MessageDecorator
+end
+
