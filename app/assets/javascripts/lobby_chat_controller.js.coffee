@@ -1,22 +1,19 @@
-ready = ->
+jQuery ->
   if $("@lobby_chat").length > 0
     new LobbyChatController()
 
-jQuery -> ready()
-$(document).on("page:load", ready)
-
 class LobbyChatController
   constructor: ->
+    @initialize()
+    @bindEvents()
+    @setupTriggers()
+
+  initialize: ->
     @$lobbyChatBox = $("@lobby_chat_box")
     @$lobbyUsers = $("@lobby_users")
     @$lobbyChatInput = $("@lobby_chat_input")
     @$submitButton = $("@chat_submit")
     @dispatcher = new WebSocketRails("localhost:3000/websocket")
-    @onConnection()
-    @bindEvents()
-    @setupTriggers()
-
-  onConnection: ->
     @dispatcher.on_open = =>
       @$lobbyChatBox.append("Welcome to Lobby Chat")
 
@@ -25,14 +22,30 @@ class LobbyChatController
     @addNewMessage()
 
   setupTriggers: ->
-    @$submitButton.click =>
-      @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
+    @clickSendButton()
+    @pressEnterToSend()
+
+  ## Events ##
 
   addNewMessage: ->
     @dispatcher.bind "add_new_message", (response) =>
-      @$lobbyChatBox.append("\n#{response.message}")
+      if response.message != ""
+        @$lobbyChatBox.append("\n#{response.message}")
 
   currentUsersList: ->
     @dispatcher.bind "current_users_list", (response) =>
       @$lobbyUsers.val(response.users_list)
+
+  ## Triggers ##
+
+  clickSendButton: ->
+    @$submitButton.click =>
+      @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
+      @$lobbyChatInput.val("")
+
+  pressEnterToSend: ->
+    $(document).on "keypress", (event) =>
+      if @$lobbyChatInput.is(":focus") and event.which == 13
+        @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
+        @$lobbyChatInput.val("")
 

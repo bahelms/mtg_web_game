@@ -9,6 +9,6 @@
 
   .row
     .col-xs-9.col-xs-offset-2
-      = text_area_tag "lobby_chat_input", nil, rows: 3, role: "lobby_chat_input"
+      = text_field_tag "lobby_chat_input", nil, rows: 3, role: "lobby_chat_input"
       = button_tag "Send", id: "chat_submit", role: "chat_submit"
 
