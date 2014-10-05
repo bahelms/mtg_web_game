@@ -1,6 +1,9 @@
-jQuery ->
+ready = ->
   if $("@lobby_chat").length > 0
     new LobbyChatController()
+
+jQuery -> ready()
+$(document).on("page:load", ready)
 
 class LobbyChatController
   constructor: ->
@@ -18,7 +21,7 @@ class LobbyChatController
       @$lobbyChatBox.append("Welcome to Lobby Chat")
 
   bindEvents: ->
-    @newUserJoinedChat()
+    @currentUsersList()
     @addNewMessage()
 
   setupTriggers: ->
@@ -29,7 +32,7 @@ class LobbyChatController
     @dispatcher.bind "add_new_message", (response) =>
       @$lobbyChatBox.append("\n#{response.message}")
 
-  newUserJoinedChat: ->
-    @dispatcher.bind "new_user_joined_chat", (response) =>
+  currentUsersList: ->
+    @dispatcher.bind "current_users_list", (response) =>
       @$lobbyUsers.val(response.users_list)
 

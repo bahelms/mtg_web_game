@@ -14,6 +14,13 @@ describe "LobbyChatController" do
     end
   end
 
+  describe "client_disconnected" do
+    it "routes to lobby_chat#client_disconnected" do
+      expect(create_event("client_disconnected", nil)).
+        to be_routed_only_to "lobby_chat#client_disconnected"
+    end
+  end
+
   describe "new_message" do
     it "routes to lobby_chat#new_message" do
       expect(create_event("new_message", message: "New Message")).

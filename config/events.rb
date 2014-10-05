@@ -1,5 +1,6 @@
 WebsocketRails::EventMap.describe do
   subscribe :client_connected, "lobby_chat#client_connected"
+  subscribe :client_disconnected, "lobby_chat#client_disconnected"
   subscribe :new_message, "lobby_chat#new_message"
 
   # You can use this file to map incoming events to controller actions.
