@@ -11,7 +11,7 @@ class MessageDecorator
   end
 
   def format
-    "#{timestamp} #{user.username}: #{message}"
+    "<p>#{timestamp} #{user.username}: #{message}</p>"
   end
 
   private

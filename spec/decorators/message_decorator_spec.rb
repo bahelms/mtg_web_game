@@ -18,9 +18,16 @@ describe MessageDecorator do
     let(:message) { "Hey there" }
     let(:formatted_message) { subject.new(message, user).format }
 
-    it "returns a string of this specified format" do
-      format = /\[\d\d:\d\d ..\] #{user.username}: #{message}/
-      expect(formatted_message).to match(format)
+    it "returns a string containing the user's username" do
+      expect(formatted_message).to match(/#{user.username}/)
+    end
+
+    it "returns a string with a timestamp" do
+      expect(formatted_message).to match(/\[\d\d:\d\d ..\]/)
+    end
+
+    it "returns a string formatted as an html <p>" do
+      expect(formatted_message).to match(/<p>.+<\/p>/)
     end
   end
 end

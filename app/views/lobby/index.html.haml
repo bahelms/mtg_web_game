@@ -1,11 +1,9 @@
 .container-fluid#lobby_chat{role: "lobby_chat"}
   .row
     .col-xs-2.col-xs-offset-2
-      = text_area_tag "lobby_users", nil, cols: 30, rows: 25, disabled: true,
-        role: "lobby_users"
+      #lobby_users{role: "lobby_users"}
     .col-xs-7
-      = text_area_tag "lobby_chat_box", nil, cols: 100, rows: 25, disabled: true,
-        role: "lobby_chat_box"
+      #lobby_chat_box{role: "lobby_chat_box"}
 
   .row
     .col-xs-9.col-xs-offset-2

@@ -1,7 +1,10 @@
 #lobby_chat
   margin-bottom: 50px
 
-  textarea, input[type="text"]
+  p
+    margin: 0
+
+  #lobby_chat_input, #lobby_users, #lobby_chat_box
     +box_sizing_border_box
     +box_shadow
     resize: none
@@ -9,13 +12,30 @@
     color: white
     border-radius: 10px
     border: 1px solid black
+    &:focus 
+      outline: none
+
+  #lobby_chat_box, #lobby_users
+    height: 500px
+    overflow-y: auto
+
+  #lobby_chat_input, #chat_submit
+    margin-top: 5px
+
+  #lobby_chat_box
+    width: 622px
+    padding: 4px 5px
+
+  #lobby_users
+    width: 205px
+    padding: 2px 4px
 
   #lobby_chat_input
-    +no_box_shadow
-    border-radius: 0
     width: 787px
     height: 55px
     padding: 5px 10px
+    // +no_box_shadow
+    // border-radius: 0
 
   #chat_submit
     +dark_button(#171717, 0%)
