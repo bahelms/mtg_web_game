@@ -9,8 +9,10 @@ describe "LobbyChatController" do
     end
 
     it "triggers a success message" do
-      expect(create_event("client_connected", nil).dispatch).
-        to trigger_message
+      # expect(create_event("client_connected", nil).dispatch).
+      #   to trigger_message
+      pending "trigger_message doesn't check for broadcast or send"
+      fail
     end
   end
 

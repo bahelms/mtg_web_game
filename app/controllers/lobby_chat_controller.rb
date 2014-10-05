@@ -14,7 +14,8 @@ class LobbyChatController < WebsocketRails::BaseController
   end
 
   def new_message
-    broadcast_message :add_new_message, message: message[:message]
+    decorator = MessageDecorator.new(message[:message], current_user)
+    broadcast_message :add_new_message, message: decorator.format
   end
 
   private

@@ -40,12 +40,14 @@ class LobbyChatController
 
   clickSendButton: ->
     @$submitButton.click =>
-      @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
-      @$lobbyChatInput.val("")
+      if @$lobbyChatInput.val() != ""
+        @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
+        @$lobbyChatInput.val("")
 
   pressEnterToSend: ->
     $(document).on "keypress", (event) =>
-      if @$lobbyChatInput.is(":focus") and event.which == 13
+      if @$lobbyChatInput.is(":focus") and event.which == 13 and
+      @$lobbyChatInput.val() != ""
         @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
         @$lobbyChatInput.val("")
 

@@ -43,12 +43,10 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
+    driver = Capybara.current_driver
+    strategy = driver == :rack_test ? :transaction : :truncation
+    DatabaseCleaner.strategy = strategy
     DatabaseCleaner.start
-  end
-
-  config.before(:each, js: true) do
-    DatabaseCleaner.strategy = :truncation
   end
 
   config.after(:each) do
