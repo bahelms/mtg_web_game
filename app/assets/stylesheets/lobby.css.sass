@@ -1,3 +1,45 @@
-// Place all the styles related to the lobby controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#lobby_chat
+  margin-bottom: 50px
+
+  p
+    margin: 0
+
+  #lobby_chat_input, #lobby_users, #lobby_chat_box
+    +box_sizing_border_box
+    +box_shadow
+    resize: none
+    background-color: #171717
+    color: white
+    border-radius: 10px
+    border: 1px solid black
+    &:focus 
+      outline: none
+
+  #lobby_chat_box, #lobby_users
+    height: 500px
+    overflow-y: auto
+
+  #lobby_chat_input, #chat_submit
+    margin-top: 5px
+
+  #lobby_chat_box
+    width: 622px
+    padding: 4px 5px
+
+  #lobby_users
+    width: 205px
+    padding: 2px 4px
+
+  #lobby_chat_input
+    width: 787px
+    height: 55px
+    padding: 5px 10px
+    // +no_box_shadow
+    // border-radius: 0
+
+  #chat_submit
+    +dark_button(#171717, 0%)
+    position: absolute
+    border-radius: 0
+    height: 55px
+

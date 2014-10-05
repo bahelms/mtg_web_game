@@ -2,17 +2,17 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Signing in with an existing account" do
-  let(:user) { create(:user) }
+  given(:user) { create(:user) }
   subject { page }
   background { visit root_path }
 
   it { should have_content("Sign In") }
-  it { should have_field("Email") }
-  it { should have_field("Password") }
+  it { should have_field("email") }
+  it { should have_field("password") }
 
   context "with valid input" do
     scenario "successfully signs in user if email and password are valid" do
-      sign_in(user)
+      sign_in user
       expect(page).not_to have_content("Invalid email or password")
     end
   end

@@ -1,8 +1,8 @@
-=dark_button
+=dark_button($color:black, $percent:100%)
   color: #4C85CF
-  background: -webkit-linear-gradient(#373737, black)
-  background: -moz-linear-gradient(#373737, black)
-  background: linear-gradient(#373737, black)
+  background: -webkit-linear-gradient(#373737, $color $percent)
+  background: -moz-linear-gradient(#373737, $color $percent)
+  background: linear-gradient(#373737, $color $percent)
   border-radius: 5px
   border: none
   text-align: center
@@ -10,4 +10,19 @@
   font-weight: bold
   height: 25px
   padding: 2px 6px 3px 6px
+
+=box_sizing_border_box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+=box_shadow($blur:10px, $size:3px, $color:black, $h_offset:0, $v_offset:0)
+  -webkit-box-shadow: inset $h_offset $v_offset $blur $size $color
+  -moz-box-shadow: inset $h_offset $v_offset $blur $size $color
+  box-shadow: inset $h_offset $v_offset $blur $size $color
+
+=no_box_shadow
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
 

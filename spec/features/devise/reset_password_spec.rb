@@ -2,8 +2,8 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Reseting password" do
-  let(:user) { create(:user) }
-  let(:mail) { ActionMailer::Base.deliveries.first }
+  given(:user) { create(:user) }
+  given(:mail) { ActionMailer::Base.deliveries.first }
   subject { page }
 
   background do
@@ -34,3 +34,4 @@ feature "Reseting password" do
     end
   end
 end
+

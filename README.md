@@ -4,11 +4,15 @@ This app is my homemade, free version of MTG Online.
 
 ###TODO
 
+* Test WS: ChatController (client connect to server)
 
 * Lobby chat
+  * Click on user and invite to game
+  * Private chat?
+
 * Deck builder
 * Game engine
 
-* Cosmetic
-  * Edit account errors
+* Users
+  * Edit username
 
