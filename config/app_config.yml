@@ -2,5 +2,5 @@ development:
   websocket_host: "localhost:3000/websocket"
 
 production:
-  websocket_host: "mtg-web-app.heroku.com:3000/websocket"
+  websocket_host: "mtg-web-app.herokuapp.com:3000/websocket"
 
