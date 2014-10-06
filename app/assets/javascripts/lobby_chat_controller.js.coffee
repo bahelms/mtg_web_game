@@ -9,11 +9,12 @@ class LobbyChatController
     @setupTriggers()
 
   initialize: ->
+    @host = $("@websocket_host").data("websocket_host")
+    @dispatcher = new WebSocketRails(@host)
     @$lobbyChatBox = $("@lobby_chat_box")
     @$lobbyUsers = $("@lobby_users")
     @$lobbyChatInput = $("@lobby_chat_input")
     @$submitButton = $("@chat_submit")
-    @dispatcher = new WebSocketRails("localhost:3000/websocket")
     @dispatcher.on_open = =>
       @$lobbyChatBox.append("Welcome to Lobby Chat")
 

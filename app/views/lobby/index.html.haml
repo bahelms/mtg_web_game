@@ -1,4 +1,6 @@
 .container-fluid#lobby_chat{role: "lobby_chat"}
+  %div{style: "display: hidden", role: "websocket_host",
+    data: { websocket_host: "#{CONFIG[Rails.env][:websocket_host]}" }}
   .row
     .col-xs-2.col-xs-offset-2
       #lobby_users{role: "lobby_users"}
