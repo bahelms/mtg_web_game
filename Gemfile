@@ -18,7 +18,8 @@ gem "sass-rails", "~> 4.0.3"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "thin", "~> 1.6.2"
 gem "uglifier", ">= 1.3.0"
-gem "websocket-rails", path: "~/rails/websocket-rails"
+gem "websocket-rails", "~> 0.7.0"
+# gem "websocket-rails", path: "~/rails/websocket-rails"
 
 group :development, :test do
   gem "byebug", "~> 3.4.0"
