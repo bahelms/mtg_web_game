@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe MessageDecorator do
+describe MessagePresenter do
   let(:user) { create(:user) }
   subject { described_class }
 

@@ -30,8 +30,7 @@ class LobbyChatController
 
   addNewMessage: ->
     @dispatcher.bind "add_new_message", (response) =>
-      if response.message != ""
-        @$lobbyChatBox.append(response.message)
+      @$lobbyChatBox.append(response.message)
 
   currentUsersList: ->
     @dispatcher.bind "current_users_list", (response) =>

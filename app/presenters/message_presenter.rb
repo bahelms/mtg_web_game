@@ -1,4 +1,4 @@
-class MessageDecorator
+class MessagePresenter
   attr_reader :message, :user
 
   def initialize(message, user)
