@@ -22,6 +22,7 @@ end
 def update_user(options)
   confirm = options[:confirm] ? options[:confirm] : options[:new_password]
 
+  fill_in "Username", with: options[:username]
   fill_in "Email", with: options[:email]
   fill_in "Current Password", with: options[:password]
   fill_in "New Password", with: options[:new_password]

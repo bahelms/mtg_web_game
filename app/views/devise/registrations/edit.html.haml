@@ -9,7 +9,9 @@
           html: { method: :put }) do |f|
 
           %div
-            = f.email_field :email, autofocus: true, placeholder: "Email"
+            = f.text_field :username, autofocus: true, placeholder: "Username"
+          %div
+            = f.email_field :email, placeholder: "Email"
           %div
             %i (leave blank if you don't want to change it)
             %br

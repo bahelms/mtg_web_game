@@ -20,7 +20,8 @@ feature "Editing account settings" do
       given(:new_email) { "new_email@foo.com"}
 
       scenario "successfully updates email" do
-        update_user(email: new_email, password: user.password)
+        update_user(email: new_email, password: user.password,
+                    username: user.username)
         expect(user.reload.email).to eq new_email
       end
     end
@@ -35,7 +36,8 @@ feature "Editing account settings" do
 
   feature "changing user password" do
     given(:options) do
-      { email: user.email, password: user.password, new_password: "@123!123" }
+      { email: user.email, username: user.username,
+        password: user.password, new_password: "@123!123" }
     end
 
     context "with valid input" do
@@ -57,6 +59,20 @@ feature "Editing account settings" do
         update_user(options)
         expect(subject).to have_content("confirmation doesn't match")
       end
+    end
+  end
+
+  feature "changing username" do
+    given(:new_username) { "Xmus Waxon Jaxon" }
+
+    scenario "redirects to profile page" do
+      update_user(email: user.email, password: user.password, username: "Hey")
+      expect(subject).to have_link("Edit Account")
+    end
+
+    scenario "replaces old username with new one" do
+      update_user(email: user.email, password: user.password, username: new_username)
+      expect(user.reload.username).to eq new_username
     end
   end
 

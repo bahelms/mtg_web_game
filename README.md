@@ -5,10 +5,9 @@ This app is my homemade, free version of MTG Online.
 ###TODO
 
 * Users
-  * Edit username
+  * Fix Cancel Account button CSS
 
 * Lobby chat
-  * Fix users list
   * Click on user and invite to game
   * Private chat?
 
