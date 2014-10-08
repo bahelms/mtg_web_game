@@ -20,6 +20,11 @@ describe UsersListPresenter do
       regex = /(#{bob.username}).*(#{alice.username}).*(#{jeff.username})/
       expect(users_list.match(regex).size).to eq(all_users.size + 1)
     end
+
+    it "returns a string inside html <p>" do
+      regex = /^<p>.+<\/p>/
+      expect(users_list).to match(regex)
+    end
   end
 end
 

@@ -34,7 +34,7 @@ class LobbyChatController
 
   currentUsersList: ->
     @dispatcher.bind "current_users_list", (response) =>
-      @$lobbyUsers.append(response.users_list)
+      @$lobbyUsers.html(response.users_list)
 
   ## Triggers ##
 

@@ -20,7 +20,7 @@ class LobbyChatController < WebsocketRails::BaseController
 
   private
     def users_list
-      controller_store[:lobby_users].map(&:username).join("\n")
+      UsersListPresenter.new(controller_store[:lobby_users]).format
     end
 
     def broadcast_current_users

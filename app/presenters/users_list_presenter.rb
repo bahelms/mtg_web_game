@@ -6,6 +6,6 @@ class UsersListPresenter
   end
 
   def format
-    users.map(&:username).join
+    users.map { |user| "<p>#{user.username}</p>" }.join
   end
 end
