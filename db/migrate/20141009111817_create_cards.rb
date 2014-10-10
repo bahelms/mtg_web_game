@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.string :name, null: false
       t.hstore :mana_cost
-      t.string :color, null: false
+      t.string :colors, array: true, null: false
       t.string :rarity, null: false
       t.integer :power
       t.integer :toughness

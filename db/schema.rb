@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20141009111817) do
   create_table "cards", force: true do |t|
     t.string   "name",         null: false
     t.hstore   "mana_cost"
-    t.string   "color",        null: false
+    t.string   "colors",       null: false, array: true
     t.string   "rarity",       null: false
     t.integer  "power"
     t.integer  "toughness"
