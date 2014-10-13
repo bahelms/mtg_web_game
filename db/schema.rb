@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009111817) do
+ActiveRecord::Schema.define(version: 20141013104611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "abilities", force: true do |t|
+    t.string "name"
+    t.text   "trigger"
+    t.text   "effect"
+    t.string "type",    null: false
+    t.hstore "cost"
+  end
 
   create_table "cards", force: true do |t|
     t.string   "name",         null: false
@@ -24,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141009111817) do
     t.string   "rarity",       null: false
     t.integer  "power"
     t.integer  "toughness"
+    t.boolean  "dual_card"
     t.integer  "set_id",       null: false
     t.integer  "type_id",      null: false
     t.integer  "subtype_id"
@@ -36,6 +45,59 @@ ActiveRecord::Schema.define(version: 20141009111817) do
   add_index "cards", ["subtype_id"], name: "index_cards_on_subtype_id", using: :btree
   add_index "cards", ["supertype_id"], name: "index_cards_on_supertype_id", using: :btree
   add_index "cards", ["type_id"], name: "index_cards_on_type_id", using: :btree
+
+  create_table "cards_abilities", id: false, force: true do |t|
+    t.integer "card_id"
+    t.integer "ability_id"
+  end
+
+  add_index "cards_abilities", ["ability_id"], name: "index_cards_abilities_on_ability_id", using: :btree
+  add_index "cards_abilities", ["card_id"], name: "index_cards_abilities_on_card_id", using: :btree
+
+  create_table "cards_decks", force: true do |t|
+    t.integer "card_id"
+    t.integer "deck_id"
+  end
+
+  add_index "cards_decks", ["card_id"], name: "index_cards_decks_on_card_id", using: :btree
+  add_index "cards_decks", ["deck_id"], name: "index_cards_decks_on_deck_id", using: :btree
+
+  create_table "decks", force: true do |t|
+    t.string  "name"
+    t.integer "user_id"
+  end
+
+  add_index "decks", ["user_id"], name: "index_decks_on_user_id", using: :btree
+
+  create_table "formats", force: true do |t|
+    t.string "name",          null: false
+    t.string "illegal_cards",              array: true
+  end
+
+  create_table "sets", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "sets_formats", force: true do |t|
+    t.integer "set_id"
+    t.integer "format_id"
+  end
+
+  add_index "sets_formats", ["format_id"], name: "index_sets_formats_on_format_id", using: :btree
+  add_index "sets_formats", ["set_id"], name: "index_sets_formats_on_set_id", using: :btree
+
+  create_table "subtypes", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "supertypes", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "types", force: true do |t|
+    t.string  "name",      null: false
+    t.boolean "permanent", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  limit: nil, default: "", null: false
