@@ -8,7 +8,7 @@ class CreateCards < ActiveRecord::Migration
       t.integer :power
       t.integer :toughness
       t.boolean :dual_card
-      t.references :set, index: true, null: false
+      t.references :card_set, index: true, null: false
       t.references :type, index: true, null: false
       t.references :subtype, index: true
       t.references :supertype, index: true

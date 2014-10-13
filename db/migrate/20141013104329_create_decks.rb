@@ -5,7 +5,7 @@ class CreateDecks < ActiveRecord::Migration
       t.references :user, index: true
     end
 
-    create_table :cards_decks do |t|
+    create_table :cards_decks, id: false do |t|
       t.references :card, index: true
       t.references :deck, index: true
     end

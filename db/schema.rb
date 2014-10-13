@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20141013104611) do
     t.hstore "cost"
   end
 
+  create_table "card_sets", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "card_sets_formats", id: false, force: true do |t|
+    t.integer "card_set_id"
+    t.integer "format_id"
+  end
+
+  add_index "card_sets_formats", ["card_set_id"], name: "index_card_sets_formats_on_card_set_id", using: :btree
+  add_index "card_sets_formats", ["format_id"], name: "index_card_sets_formats_on_format_id", using: :btree
+
   create_table "cards", force: true do |t|
     t.string   "name",         null: false
     t.hstore   "mana_cost"
@@ -33,7 +45,7 @@ ActiveRecord::Schema.define(version: 20141013104611) do
     t.integer  "power"
     t.integer  "toughness"
     t.boolean  "dual_card"
-    t.integer  "set_id",       null: false
+    t.integer  "card_set_id",  null: false
     t.integer  "type_id",      null: false
     t.integer  "subtype_id"
     t.integer  "supertype_id"
@@ -41,7 +53,7 @@ ActiveRecord::Schema.define(version: 20141013104611) do
     t.datetime "updated_at"
   end
 
-  add_index "cards", ["set_id"], name: "index_cards_on_set_id", using: :btree
+  add_index "cards", ["card_set_id"], name: "index_cards_on_card_set_id", using: :btree
   add_index "cards", ["subtype_id"], name: "index_cards_on_subtype_id", using: :btree
   add_index "cards", ["supertype_id"], name: "index_cards_on_supertype_id", using: :btree
   add_index "cards", ["type_id"], name: "index_cards_on_type_id", using: :btree
@@ -54,7 +66,7 @@ ActiveRecord::Schema.define(version: 20141013104611) do
   add_index "cards_abilities", ["ability_id"], name: "index_cards_abilities_on_ability_id", using: :btree
   add_index "cards_abilities", ["card_id"], name: "index_cards_abilities_on_card_id", using: :btree
 
-  create_table "cards_decks", force: true do |t|
+  create_table "cards_decks", id: false, force: true do |t|
     t.integer "card_id"
     t.integer "deck_id"
   end
@@ -73,18 +85,6 @@ ActiveRecord::Schema.define(version: 20141013104611) do
     t.string "name",          null: false
     t.string "illegal_cards",              array: true
   end
-
-  create_table "sets", force: true do |t|
-    t.string "name", null: false
-  end
-
-  create_table "sets_formats", force: true do |t|
-    t.integer "set_id"
-    t.integer "format_id"
-  end
-
-  add_index "sets_formats", ["format_id"], name: "index_sets_formats_on_format_id", using: :btree
-  add_index "sets_formats", ["set_id"], name: "index_sets_formats_on_set_id", using: :btree
 
   create_table "subtypes", force: true do |t|
     t.string "name", null: false
