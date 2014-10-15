@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# rake db:seed
+
+formats = [:standard, :modern, :legacy, :vintage]
+supertypes = [:basic, :legendary, :elite, :snow, :world]
+types = [
+  { name: :sorcery, permanent: false },
+  { name: :instant, permanent: false },
+  { name: :creature, permanent: true },
+  { name: :artifact, permanent: true },
+  { name: :enchantment, permanent: true },
+  { name: :land, permanent: true },
+  { name: :planeswalker, permanent: true },
+]
+
+formats.each { |f| Format.create!(name: f) }
+supertypes.each { |st| Supertype.create!(name: st) }
+types.each { |t| Type.create!(name: t[:name], permanent: t[:permanent]) }
+
+classes = File.read("db/classes.csv").split("\n")
+classes.each { |c| TypeClass.create!(name: c) }
+
+subtypes = File.read("db/subtypes.csv").split("\n")
+subtypes.each { |sub| Subtype.create!(name: sub) }
+

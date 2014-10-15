@@ -6,7 +6,7 @@ This app is my homemade, free version of MTG Online.
 
 * DB
   * db/seeds: Formats, Types, Subtypes, Supertypes, Abilities, Sets
-  * Rake tasks to add: Sets (model and actual cards), Abilities
+  * Rake tasks to add: Sets, Cards, Abilities
 
 * Deck builder
 * Game engine

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013104611) do
+ActiveRecord::Schema.define(version: 20141015110148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 20141013104611) do
   end
 
   create_table "card_sets", force: true do |t|
-    t.string "name", null: false
+    t.string "name",  null: false
+    t.string "block"
   end
 
   create_table "card_sets_formats", id: false, force: true do |t|
@@ -91,6 +92,10 @@ ActiveRecord::Schema.define(version: 20141013104611) do
   end
 
   create_table "supertypes", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "type_classes", force: true do |t|
     t.string "name", null: false
   end
 
