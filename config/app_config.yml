@@ -2,7 +2,7 @@ development: &dev
   websocket_host: "localhost:3000/websocket"
 
 production:
-  websocket_host: "mtg-web-app.herokuapp.com/websocket"
+  websocket_host: "mtg-web-game.herokuapp.com/websocket"
 
 test:
   <<: *dev
