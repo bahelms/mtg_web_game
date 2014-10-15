@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015110148) do
+ActiveRecord::Schema.define(version: 20141015112814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20141015110148) do
   end
 
   create_table "card_sets", force: true do |t|
-    t.string "name",  null: false
-    t.string "block"
+    t.string   "name",       null: false
+    t.string   "block"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "card_sets_formats", id: false, force: true do |t|
@@ -39,24 +41,26 @@ ActiveRecord::Schema.define(version: 20141015110148) do
   add_index "card_sets_formats", ["format_id"], name: "index_card_sets_formats_on_format_id", using: :btree
 
   create_table "cards", force: true do |t|
-    t.string   "name",         null: false
+    t.string   "name",          null: false
     t.hstore   "mana_cost"
-    t.string   "colors",       null: false, array: true
-    t.string   "rarity",       null: false
+    t.string   "colors",        null: false, array: true
+    t.string   "rarity",        null: false
     t.integer  "power"
     t.integer  "toughness"
     t.boolean  "dual_card"
-    t.integer  "card_set_id",  null: false
-    t.integer  "type_id",      null: false
+    t.integer  "card_set_id",   null: false
+    t.integer  "type_id",       null: false
     t.integer  "subtype_id"
     t.integer  "supertype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_class_id"
   end
 
   add_index "cards", ["card_set_id"], name: "index_cards_on_card_set_id", using: :btree
   add_index "cards", ["subtype_id"], name: "index_cards_on_subtype_id", using: :btree
   add_index "cards", ["supertype_id"], name: "index_cards_on_supertype_id", using: :btree
+  add_index "cards", ["type_class_id"], name: "index_cards_on_type_class_id", using: :btree
   add_index "cards", ["type_id"], name: "index_cards_on_type_id", using: :btree
 
   create_table "cards_abilities", id: false, force: true do |t|
