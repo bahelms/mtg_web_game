@@ -1,5 +1,5 @@
 class Subtype < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
-  has_many :cards
+  has_and_belongs_to_many :cards
 end
 

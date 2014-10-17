@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015112814) do
+ActiveRecord::Schema.define(version: 20141017113848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20141015112814) do
     t.boolean  "dual_card"
     t.integer  "card_set_id",   null: false
     t.integer  "type_id",       null: false
-    t.integer  "subtype_id"
     t.integer  "supertype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,7 +57,6 @@ ActiveRecord::Schema.define(version: 20141015112814) do
   end
 
   add_index "cards", ["card_set_id"], name: "index_cards_on_card_set_id", using: :btree
-  add_index "cards", ["subtype_id"], name: "index_cards_on_subtype_id", using: :btree
   add_index "cards", ["supertype_id"], name: "index_cards_on_supertype_id", using: :btree
   add_index "cards", ["type_class_id"], name: "index_cards_on_type_class_id", using: :btree
   add_index "cards", ["type_id"], name: "index_cards_on_type_id", using: :btree
@@ -78,6 +76,14 @@ ActiveRecord::Schema.define(version: 20141015112814) do
 
   add_index "cards_decks", ["card_id"], name: "index_cards_decks_on_card_id", using: :btree
   add_index "cards_decks", ["deck_id"], name: "index_cards_decks_on_deck_id", using: :btree
+
+  create_table "cards_subtypes", id: false, force: true do |t|
+    t.integer "card_id"
+    t.integer "subtype_id"
+  end
+
+  add_index "cards_subtypes", ["card_id"], name: "index_cards_subtypes_on_card_id", using: :btree
+  add_index "cards_subtypes", ["subtype_id"], name: "index_cards_subtypes_on_subtype_id", using: :btree
 
   create_table "decks", force: true do |t|
     t.string  "name"
