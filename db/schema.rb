@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017113848) do
+ActiveRecord::Schema.define(version: 20141018185101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20141017113848) do
     t.string "type",    null: false
     t.hstore "cost"
   end
+
+  create_table "abilities_cards", id: false, force: true do |t|
+    t.integer "card_id"
+    t.integer "ability_id"
+  end
+
+  add_index "abilities_cards", ["ability_id"], name: "index_abilities_cards_on_ability_id", using: :btree
+  add_index "abilities_cards", ["card_id"], name: "index_abilities_cards_on_card_id", using: :btree
 
   create_table "card_sets", force: true do |t|
     t.string   "name",       null: false
@@ -60,14 +68,6 @@ ActiveRecord::Schema.define(version: 20141017113848) do
   add_index "cards", ["supertype_id"], name: "index_cards_on_supertype_id", using: :btree
   add_index "cards", ["type_class_id"], name: "index_cards_on_type_class_id", using: :btree
   add_index "cards", ["type_id"], name: "index_cards_on_type_id", using: :btree
-
-  create_table "cards_abilities", id: false, force: true do |t|
-    t.integer "card_id"
-    t.integer "ability_id"
-  end
-
-  add_index "cards_abilities", ["ability_id"], name: "index_cards_abilities_on_ability_id", using: :btree
-  add_index "cards_abilities", ["card_id"], name: "index_cards_abilities_on_card_id", using: :btree
 
   create_table "cards_decks", id: false, force: true do |t|
     t.integer "card_id"
