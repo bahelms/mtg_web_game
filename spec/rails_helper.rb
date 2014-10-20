@@ -39,8 +39,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-    # Rake::Task["db:seed"].invoke
+    save_tables = %w[formats supertypes types type_classes subtypes abilities]
+    DatabaseCleaner.clean_with(:truncation, except: save_tables)
   end
 
   config.before(:each) do

@@ -1,6 +1,10 @@
-### CARD: name|[mana cost]|[colors]|rarity|power|toughness|dual_card|type|[subtype]|supertype|type class ###
-### ABILITY: type|name|trigger|cost|effect ###
+### CARD: name|[mana cost,]|[color,]|rarity|power|toughness|dual_card|type|[subtype,]|supertype|type class ###
+### ABILITY: type|name|trigger|[ordered cost,]|[effect:target,] ###
 2015 Core Set
-Accursed Spirit|black 1,colorless 3|black|common|3|2|false|creature|Spirit%keyword|Intimidate
-Black Cat|black 1,colorless 1|black|common|1|1|false|creature|Zombie,Cat%trigger||zone_change_to_graveyard||target opponent discards a card at random
-
+Accursed Spirit|black 1,colorless 3|black|common|3|2||creature|Spirit%keyword|Intimidate
+Black Cat|black 1,colorless 1|black|common|1|1||creature|Zombie,Cat%triggered||zone_change_to_graveyard||discard_random:opponent
+Blood Host|black 2,colorless 3|black|uncommon|3|3||creature|Vampire%activated|||black 1,colorless 1,sacrifice_creature 1|+1/+1_counter:self,+2_life:player
+Carrion Crow|black 1,colorless 2|black|common|2|2||creature|Zombie,Bird%keyword|Flying%triggered||zone_change_to_battlefield||tapped:self
+Caustic Tar|black 2,colorless 4|black|uncommon||||enchantment|Aura%
+Child of Night|black 1,colorless 1|black|common|2|1||creature|Vampire%keyword|Lifelink
+Covenant fo Blood|black 1,colorless 6|black|common||||sorcery%keyword|Convoke%triggered||resolved||

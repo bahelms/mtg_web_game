@@ -9,11 +9,12 @@ class CardSetImporter
   end
 
   def import
+    card_set = create_card_set
     @csv[1..-1].each do |row|
       split_row = row.split("%")
       card_attrs = split_row.shift.split("|")
       abilities = split_row
-      create_abilities(abilities, create_card(card_attrs, create_card_set))
+      create_abilities(abilities, create_card(card_attrs, card_set))
     end
   end
 

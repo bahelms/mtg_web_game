@@ -49,7 +49,11 @@ describe CardSetImporter do
 
     it "saves all card Abilities specified in the file" do
       subject.import
-      expect(Card.first.abilities.count).to eq 1
+      cards = Card.where(card_set: CardSet.first)
+      abilities_count = cards.reduce(0) do |sum, card|
+        sum + card.abilities.count
+      end
+      expect(abilities_count).to eq 2
     end
   end
 end

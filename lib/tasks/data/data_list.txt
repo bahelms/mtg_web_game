@@ -1,0 +1,11 @@
+Triggers:
+zone_change_to_graveyard
+zone_change_to_battlefield
+resolved
+
+Ability effects:
+discard_random
++1/+1_counter
++2_life
+tapped
+
