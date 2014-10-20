@@ -40,6 +40,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
+    # Rake::Task["db:seed"].invoke
   end
 
   config.before(:each) do

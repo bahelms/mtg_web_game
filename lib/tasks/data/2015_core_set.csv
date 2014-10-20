@@ -1,6 +1,6 @@
 ### CARD: name|[mana cost]|[colors]|rarity|power|toughness|dual_card|type|[subtype]|supertype|type class ###
 ### ABILITY: type|name|trigger|cost|effect ###
 2015 Core Set
-Accursed Spirit|black 1,colorless 3|black|common|3|2|false|creature|Spirit % keyword|Intimidate
-Black Cat|black 1,colorless 1|black|common|1|1|false|creature|Zombie,Cat % trigger||zone_change_to_graveyard||target opponent discards a card at random
+Accursed Spirit|black 1,colorless 3|black|common|3|2|false|creature|Spirit%keyword|Intimidate
+Black Cat|black 1,colorless 1|black|common|1|1|false|creature|Zombie,Cat%trigger||zone_change_to_graveyard||target opponent discards a card at random
 

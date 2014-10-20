@@ -28,15 +28,28 @@ describe CardSetImporter do
   end
 
   describe "#import" do
-    before { subject.import }
+    context "when that CardSet already exists" do
+      it "destroys that CardSet" do
+        set = CardSet.create(name: "New Card Set")
+        subject.import
+        expect(set.id).not_to eq CardSet.first.id
+      end
+    end
 
     it "saves a new CardSet" do
+      subject.import
       expect(CardSet.first.name).to eq test_csv.first
     end
 
     it "saves all the Cards specified in the file to the new CardSet" do
+      subject.import
       card_count = test_csv.size - 1
-      expect(Card.where(card_set_id: CardSet.first.id).size).to eq card_count
+      expect(Card.where(card_set: CardSet.first).size).to eq card_count
+    end
+
+    it "saves all card Abilities specified in the file" do
+      subject.import
+      expect(Card.first.abilities.count).to eq 1
     end
   end
 end
