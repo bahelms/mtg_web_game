@@ -4,14 +4,18 @@ zone_change_to_battlefield
 resolved
 
 Ability effects:
-discard_random
-add_counter
-gain_life
-tapped
-damage
-enchant
+Actions:
+  discard_random : target : amount
+  add_counter : target : counter
+  gain_life : target : amount
+  damage : target : amount
+  enchant : target
+  control_creature : from_zone&creature : destination_zone
+Conditions:
+  tapped : target
+  disabled : target : what_to_disable
 
-Targets:
+Targets: OR -> target/target; AND -> target&target
 player
 target_player
 target_opponent
@@ -19,8 +23,10 @@ target_creature
 self
 land
 
-Costs:
+Costs: when X -> X:target:option
 black, blue, white, green, red, colorless
 sacrifice_creature
 tap
+life
+counters
 
