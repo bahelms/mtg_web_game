@@ -9,4 +9,18 @@ add_counter
 gain_life
 tapped
 damage
+enchant
+
+Targets:
+player
+target_player
+target_opponent
+target_creature
+self
+land
+
+Costs:
+black, blue, white, green, red, colorless
+sacrifice_creature
+tap
 
