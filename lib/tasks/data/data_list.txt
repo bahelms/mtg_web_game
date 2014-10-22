@@ -1,7 +1,9 @@
 Triggers:
-zone_change_to_graveyard
-zone_change_to_battlefield
-resolved
+  zone_change : to_zone : from_zone
+  resolved
+  creature_death : target : controller
+Turn based:
+  upkeep : when : target
 
 Ability effects:
 Actions:
@@ -10,23 +12,29 @@ Actions:
   gain_life : target : amount
   damage : target : amount
   enchant : target
-  control_creature : from_zone&creature : destination_zone
+  control_creature : from_zone&creature : to_zone
 Conditions:
   tapped : target
   disabled : target : what_to_disable
 
 Targets: OR -> target/target; AND -> target&target
-player
-target_player
-target_opponent
-target_creature
-self
-land
+  player          (yourself)
+  target_player   (yourself or opponent)
+  opponent
+  creature        (creature you control)
+  target_creature (any creature)
+  self            (card)
+  land
 
-Costs: when X -> X:target:option
-black, blue, white, green, red, colorless
-sacrifice_creature
-tap
-life
-counters
-
+Costs: 
+  black, blue, white, green, red, colorless
+  sacrifice_creature
+  tap
+  life
+  counters
+Payment Options: 
+  X:target:option Options:
+    +1/+1 (counter type)
+    last_turn
+  
+    

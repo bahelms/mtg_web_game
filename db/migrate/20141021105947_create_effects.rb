@@ -4,6 +4,7 @@ class CreateEffects < ActiveRecord::Migration
       t.string :name, null: false
       t.string :target
       t.string :result
+      t.string :duration
       t.references :ability, index: true
     end
   end

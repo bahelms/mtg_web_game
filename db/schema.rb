@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20141021105947) do
     t.string  "name",       null: false
     t.string  "target"
     t.string  "result"
+    t.string  "duration"
     t.integer "ability_id"
   end
 
