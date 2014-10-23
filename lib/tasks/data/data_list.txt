@@ -1,3 +1,20 @@
+Parse Syntax:
+  / => Or
+  & => And
+  % => separates abilities
+  | => separates attributes for cards and abilities
+  : => separates attributes for effects
+
+Ability types: triggered, activated, keyword, static
+
+Zones: 
+  graveyard        
+  target_graveyard
+  hand
+  library
+  battlefield
+  table (includes all zones)
+
 Triggers:
   zone_change : to_zone : from_zone
   resolved
@@ -7,26 +24,37 @@ Turn based:
 
 Ability effects:
 Actions:
-  discard_random : target : amount
-  add_counter : target : counter
-  gain_life : target : amount
-  damage : target : amount
-  enchant : target
-  control_creature : from_zone&creature : to_zone
-Conditions:
-  tapped : target
-  disabled : target : what_to_disable
+  discard_random   : target : amount
+  add_counter      : target : counter
+  gain_life        : target : amount
+  damage           : target : amount
+  enchant          : target (all of the following abilities are applied to enchanted target)
+  control_creature : target : from_zone : to_zone
+  destroy          : target
+  prevent          : target : prevented_ability
+  tap              : target
+  disable          : target : what_to_disable
+  transfer_card    : target : to_zone : from_zone
+  draw_card        : target : amount
 
+// Convention: w/o the 'target' prefix, it means targets under your control
 Targets: OR -> target/target; AND -> target&target
-  player          (yourself)
-  target_player   (yourself or opponent)
+  player              (yourself)
+  creature            (creature you control)
   opponent
-  creature        (creature you control)
-  target_creature (any creature)
-  self            (card)
+  target_player       (yourself or opponent)
+  target_creature     (any creature)
+  self                (card)
   land
+  all_non_black_creatures 
+  all_non_controlled_creatures
+  all_non_controlled_planeswalkers
 
-Costs: 
+Durations:
+  end_of_turn
+
+// Prevent is a cost that the target must pay to stop effect from happening
+Costs: |type amount, type amount| OR |prevent:target, type amount,type amount|
   black, blue, white, green, red, colorless
   sacrifice_creature
   tap
@@ -37,4 +65,3 @@ Payment Options:
     +1/+1 (counter type)
     last_turn
   
-    

@@ -1,18 +1,21 @@
-### CARD: name | mana_cost[] | color[] | rarity | power | toughness | dual_card | supertype | type | subtype[] | type_class
-### ABILITY: type | name | trigger | ordered_cost[] | effect[]
-### EFFECT: effect : target : result
+### CARD: name | mana_cost[','] | color[','] | rarity | power | toughness | dual_card | supertype | type | subtype[] | type_class
+### ABILITY: type | name | trigger | ordered_cost[','] | effect[',"]
+### EFFECT: effect : target : result : duration
 2015 Core Set
 Accursed Spirit|black 1,colorless 3|black|common|3|2|||creature|Spirit%keyword|Intimidate
 Black Cat|black 1,colorless 1|black|common|1|1|||creature|Zombie,Cat%triggered||zone_change:graveyard||discard_random:opponent:1
 Blood Host|black 2,colorless 3|black|uncommon|3|3|||creature|Vampire%activated|||black 1,colorless 1,sacrifice_creature 1|add_counter:self:+1/+1,gain_life:player:2
-Carrion Crow|black 1,colorless 2|black|common|2|2|||creature|Zombie,Bird%keyword|Flying%triggered||zone_change:battlefield||tapped:self
+Carrion Crow|black 1,colorless 2|black|common|2|2|||creature|Zombie,Bird%keyword|Flying%triggered||zone_change:battlefield||tap:self
 Caustic Tar|black 2,colorless 4|black|uncommon|||||enchantment|Aura%triggered||resolved||enchant:land%activated|||tap 1|damage:target_player:3
 Child of Night|black 1,colorless 1|black|common|2|1|||creature|Vampire%keyword|Lifelink
 Covenant fo Blood|black 1,colorless 6|black|common|||||sorcery%keyword|Convoke%triggered||resolved||damage:target_creature/target_player:4,gain_life:player:4
-Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:creature%static||||add_counter:self:-1/-1%static||||disabled:self:block
+Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:target_creature%static||||add_counter:self:-1/-1%static||||disable:self:block
 Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated|||black 1,tap 1,life 1|add_counter:self:+1/+1%|black 1,colorless 2,tap 1,counters X:self:+1/+1|damage:target_creature:X
-Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered||resolved||control_creature:target_graveyard&target_creature:battlefield
+Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered||resolved||control_creature:target_creature:target_graveyard:battlefield
 Eternal Thirst|black 1,colorless 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:creature%keyword|Lifelink%triggered||creature_death:any:opponent||add_counter:self:+1/+1
-Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered||resolved||enchant:player%triggered||upkeep:beginning:each|life X:opponent:last_turn|add_counter:creature:+1/+1
-
-Festergloom|black 1,colorless 2|black|common|||||sorcery%
+Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered||resolved||enchant:player%triggered||upkeep:beginning:all|life X:opponent:last_turn|add_counter:creature:+1/+1
+Festergloom|black 1,colorless 2|black|common|||||sorcery%triggered||resolved||add_counter:non_black_creatures:-1/-1:end_of_turn
+Flesh to Dust|black 2,colorless 3|black|common|||||instant%triggered||resolved||destroy:target_creature,prevent:target_creature:regeneration
+Gravedigger|black 1,colorless 3|black|uncommon|2|2|||creature|Zombie%triggered||zone_change:battlefield||transfer_card:creature:graveyard:hand
+In Garruk's Wake|black 2,colorless 7|black|rare|||||sorcery%triggered||resolved||destroy:all_non_controlled_creatures,destroy:all_non_controlled_planeswalkers
+Indulgent Tormentor|black 2,colorless 3|black|rare|5|3|||creature|Demon%keyword|Flying%triggered||upkeep:beginning:player|prevent:target_opponent,life 3/sacrifice_creature 1|draw_card:player:1
