@@ -1,3 +1,7 @@
+CARD: name | mana_cost[','] | color[','] | rarity | power | toughness | dual_card | supertype | type | subtype[] | type_class
+ABILITY: type | name | trigger | ordered_cost[','] | effect[',']
+EFFECT: effect : target : result : duration
+
 Parse Syntax:
   / => Or
   & => And
@@ -27,6 +31,7 @@ Actions:
   discard_random   : target : amount
   add_counter      : target : counter
   gain_life        : target : amount
+  lose_life        : target : amount
   damage           : target : amount
   enchant          : target (all of the following abilities are applied to enchanted target)
   control_creature : target : from_zone : to_zone
@@ -54,7 +59,7 @@ Durations:
   end_of_turn
 
 // Prevent is a cost that the target must pay to stop effect from happening
-Costs: |type amount, type amount| OR |prevent:target, type amount,type amount|
+Costs: |type amount, type amount| OR |prevent target, type amount, type amount|
   black, blue, white, green, red, colorless
   sacrifice_creature
   tap

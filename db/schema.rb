@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021105947) do
+ActiveRecord::Schema.define(version: 20141024013640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20141021105947) do
   create_table "abilities", force: true do |t|
     t.string "name"
     t.text   "trigger"
-    t.text   "effect"
-    t.string "type",    null: false
+    t.string "type",                 null: false
     t.hstore "cost"
+    t.string "effects", default: [],              array: true
   end
 
   create_table "abilities_cards", id: false, force: true do |t|
