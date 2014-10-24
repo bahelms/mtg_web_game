@@ -28,7 +28,10 @@ classes = File.read("db/classes.csv").split("\n")
 classes.each { |c| TypeClass.create!(name: c) }
 
 subtypes = File.read("db/subtypes.csv").split("\n")
-subtypes.each { |sub| Subtype.create!(name: sub) }
+subtypes.each do |sub|
+  st = sub.split(",")
+  Subtype.create!(name: st.first, parent_type: st.last)
+end
 
 keyword_abilities = File.read("db/keyword_abilities.csv").split("\n")
 keyword_abilities.each { |a| Ability.create!(type: :keyword, name: a) }

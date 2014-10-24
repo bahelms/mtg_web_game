@@ -1,5 +1,5 @@
-CARD: name | mana_cost[','] | color[','] | rarity | power | toughness | dual_card | supertype | type | subtype[] | type_class
-ABILITY: type | name | trigger | ordered_cost[','] | effect[',']
+CARD: name | mana_costs[','] | colors[','] | rarity | power | toughness | dual_card | supertype | type | subtypes[] | type_class
+ABILITY: type | name | trigger | ordered_costs[','] | ordered_effects[',']
 EFFECT: effect : target : result : duration
 
 Parse Syntax:
@@ -9,29 +9,33 @@ Parse Syntax:
   | => separates attributes for cards and abilities
   : => separates attributes for effects
 
-Ability types: triggered, activated, keyword, static
+Ability types: triggered, activated, keyword, static, loyalty
 
 Zones: 
   graveyard        
   target_graveyard
+  all_graveyards
   hand
   library
   battlefield
+  stack
   table (includes all zones)
 
 Triggers:
   zone_change : to_zone : from_zone
   resolved
   creature_death : target : controller
+  creature_attacks : target : type : controller
 Turn based:
   upkeep : when : target
 
 Ability effects:
 Actions:
   discard_random   : target : amount
+  discard          : target : amount
   add_counter      : target : counter
   gain_life        : target : amount
-  lose_life        : target : amount
+  lose_life        : target : amount  (can't be prevented by damage prevention)
   damage           : target : amount
   enchant          : target (all of the following abilities are applied to enchanted target)
   control_creature : target : from_zone : to_zone
@@ -41,6 +45,10 @@ Actions:
   disable          : target : what_to_disable
   transfer_card    : target : to_zone : from_zone
   draw_card        : target : amount
+  gain_loyalty     : target : amount
+  search_library   : target : card_amount
+  shuffle_library  : target
+  add_chosen_card_to_library : target_library : location
 
 // Convention: w/o the 'target' prefix, it means targets under your control
 Targets: OR -> target/target; AND -> target&target
@@ -51,6 +59,8 @@ Targets: OR -> target/target; AND -> target&target
   target_creature     (any creature)
   self                (card)
   land
+  any
+  all_creatures
   all_non_black_creatures 
   all_non_controlled_creatures
   all_non_controlled_planeswalkers
@@ -65,6 +75,7 @@ Costs: |type amount, type amount| OR |prevent target, type amount, type amount|
   tap
   life
   counters
+  loyalty
 Payment Options: 
   X:target:option Options:
     +1/+1 (counter type)
