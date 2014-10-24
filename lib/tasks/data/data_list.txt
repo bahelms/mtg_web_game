@@ -31,23 +31,24 @@ Turn based:
 
 Ability effects:
 Actions:
-  discard_random   : target : amount
-  discard          : target : amount
-  add_counter      : target : counter
-  gain_life        : target : amount
-  lose_life        : target : amount  (can't be prevented by damage prevention)
-  damage           : target : amount
-  enchant          : target (all of the following abilities are applied to enchanted target)
-  control_creature : target : from_zone : to_zone
-  destroy          : target
-  prevent          : target : prevented_ability
-  tap              : target
-  disable          : target : what_to_disable
-  transfer_card    : target : to_zone : from_zone
-  draw_card        : target : amount
-  gain_loyalty     : target : amount
-  search_library   : target : card_amount
-  shuffle_library  : target
+  discard_random    : target : amount
+  discard           : target : amount
+  add_counter       : target : counter
+  gain_life         : target : amount
+  lose_life         : target : amount  (can't be prevented by damage prevention)
+  damage            : target : amount
+  enchant           : target (all of the following abilities are applied to enchanted target)
+  control_creature  : target : from_zone : to_zone
+  destroy           : target
+  prevent_ability   : target : keyword_ability
+  gain_ability      : target : keyword_ability
+  tap               : target
+  disable           : target : what_to_disable
+  transfer_card     : target : to_zone : from_zone
+  draw_card         : target : amount
+  gain_loyalty      : target : amount
+  search_library    : target : card_amount
+  shuffle_library   : target
   add_chosen_card_to_library : target_library : location
 
 // Convention: w/o the 'target' prefix, it means targets under your control
@@ -58,7 +59,8 @@ Targets: OR -> target/target; AND -> target&target
   target_player       (yourself or opponent)
   target_creature     (any creature)
   self                (card)
-  land
+  land                (your land)
+  target_land         (any land)
   any
   all_creatures
   all_non_black_creatures 
