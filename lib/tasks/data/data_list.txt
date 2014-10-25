@@ -42,11 +42,11 @@ EFFECT: action:target:option:duration
 
 COST: type amount IF |prevent target,| the costs are to prevent ability effects
   types: 
-    black, blue, white, green, red, colorless
+    black, blue, white, green, red, colorless 
     sacrifice_creature   
     sacfifice target
     discard_creature     
-    tap 
+    tap target
     life                
     counters            
     loyalty              

@@ -7,7 +7,7 @@ Caustic Tar|black 2,colorless 4|black|uncommon|||||enchantment|Aura%triggered||r
 Child of Night|black 1,colorless 1|black|common|2|1|||creature|Vampire%keyword|Lifelink
 Covenant fo Blood|black 1,colorless 6|black|common|||||sorcery%keyword|Convoke%triggered||resolved||damage:target_creature/target_player:4,gain_life:player:4
 Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:target_creature%static||||add_counter:self:-1/-1%static||||disable:self:block
-Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated|||black 1,tap,life 1|add_counter:self:+1/+1%|black 1,colorless 2,tap,counters X:self:+1/+1|damage:target_creature:X
+Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated|||black 1,tap self,life 1|add_counter:self:+1/+1%activated|||black 1,colorless 2,tap self,counters X:self:+1/+1|damage:target_creature:X
 Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered||resolved||control_creature:target_creature:target_graveyard:battlefield
 Eternal Thirst|black 1,colorless 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:target_creature%keyword|Lifelink%triggered||creature_death:any:opponent||add_counter:self:+1/+1
 Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered||resolved||enchant:player%triggered||upkeep:beginning:each|life X:opponent:last_turn|add_counter:creature:+1/+1
