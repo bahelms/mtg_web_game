@@ -10,13 +10,18 @@ Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered||resolved||
 Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated|||black 1,tap 1,life 1|add_counter:self:+1/+1%|black 1,colorless 2,tap 1,counters X:self:+1/+1|damage:target_creature:X
 Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered||resolved||control_creature:target_creature:target_graveyard:battlefield
 Eternal Thirst|black 1,colorless 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:target_creature%keyword|Lifelink%triggered||creature_death:any:opponent||add_counter:self:+1/+1
-Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered||resolved||enchant:player%triggered||upkeep:beginning:all|life X:opponent:last_turn|add_counter:creature:+1/+1
+Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered||resolved||enchant:player%triggered||upkeep:beginning:each|life X:opponent:last_turn|add_counter:creature:+1/+1
 Festergloom|black 1,colorless 2|black|common|||||sorcery%triggered||resolved||add_counter:non_black_creatures:-1/-1:end_of_turn
 Flesh to Dust|black 2,colorless 3|black|common|||||instant%triggered||resolved||destroy:target_creature,prevent_ability:target_creature:Regeneration
 Gravedigger|black 1,colorless 3|black|uncommon|2|2|||creature|Zombie%triggered||zone_change:battlefield||transfer_card:creature:graveyard:hand
-In Garruk's Wake|black 2,colorless 7|black|rare|||||sorcery%triggered||resolved||destroy:all_non_controlled_creatures,destroy:all_non_controlled_planeswalkers
+In Garruk's Wake|black 2,colorless 7|black|rare|||||sorcery%triggered||resolved||destroy:all_creatures:opponent,destroy:all_planeswalkers:opponent
 Indulgent Tormentor|black 2,colorless 3|black|rare|5|3|||creature|Demon%keyword|Flying%triggered||upkeep:beginning:player|prevent target_opponent,life 3/sacrifice_creature 1|draw_card:player:1
-Leeching Sliver|black 1,colorless 1|black|uncommon|1|1|||creature|Sliver%triggered||creature_attacks:any:Sliver:player||lose_life:opponent:1
+Leeching Sliver|black 1,colorless 1|black|uncommon|1|1|||creature|Sliver%triggered||creature_attack:any:Sliver:player||lose_life:opponent:1
 Liliana Vess|black 2,colorless 3|black|mythic rare|5||||planeswalker|Liliana%loyalty||||discard:target_player:1,gain_loyalty:self:1%loyalty|||loyalty 2|search_library:player:1,shuffle_library:player,add_chosen_card_to_library:player:top%loyalty|||loyalty 8|control_creature:all_creatures:all_graveyards:battlefield
 Mind Rot|black 1,colorless 2|black|common|||||sorcery%triggered||resolved||discard:target_player:2
 Necrobite|black 1,colorless 2|black|common|||||instant%triggered||resolved||gain_ability:target_creature:Deathtouch:end_of_turn,gain_ability:target_creature:Regeneration:end_of_turn
+Necrogen Scudder|black 1,colorless 2|black|uncommon|3|3|||creature|Horror%keyword|Flying%triggered||zone_change:battlefield||lose_life:player:3
+Necromancer's Assistant|black 1,colorless 2|black|common|3|1|||creature|Zombie%triggered||zone_change:battlefield||mill:player:3
+Necromancer's Stockpile|black 1,colorless 1|black|rare|||||enchantment%triggered||resolved||enchant:player%activated|||black 1,colorless 1,discard_creature 1|draw_card:player:1%triggered||last_discard_type:player:Zombie||play_token:creature:Zombie:black:2:2:tapped
+Nightfire Giant|black 1,colorless 4|black|uncommon|4|3|||creature|Zombie,Giant%static|||control_land Mountain|add_counter:self:+1/+1%activated|||red 1,colorless 4|damage:target_creature/target_player:2
+Ob Nixilis, Unshackled|black 2,colorless 4|black|rare|4|4||legendary|creature|Demon%keyword|Flying%keyword|Trample%triggered||search_library:opponent||sacrifice_creature:opponent,lose_life:opponent:10%triggered||creature_death:any:any||add_counter:self:+1/+1

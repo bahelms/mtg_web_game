@@ -25,7 +25,9 @@ Triggers:
   zone_change : to_zone : from_zone
   resolved
   creature_death : target : controller
-  creature_attacks : target : type : controller
+  creature_attack : target : type : controller
+  last_discard_type : discarded_by : card_type
+  search_library : target  
 Turn based:
   upkeep : when : target
 
@@ -39,7 +41,7 @@ Actions:
   damage            : target : amount
   enchant           : target (all of the following abilities are applied to enchanted target)
   control_creature  : target : from_zone : to_zone
-  destroy           : target
+  destroy           : target : controller
   prevent_ability   : target : keyword_ability
   gain_ability      : target : keyword_ability
   tap               : target
@@ -50,6 +52,10 @@ Actions:
   search_library    : target : card_amount
   shuffle_library   : target
   add_chosen_card_to_library : target_library : location
+  mill              : target : amount   (from top of library to graveyard)
+  // play_token puts a token onto the battlefield
+  play_token        : type : subtype : color : power : toughness : state  (state: tapped)
+  sacrifice_creature : target
 
 // Convention: w/o the 'target' prefix, it means targets under your control
 Targets: OR -> target/target; AND -> target&target
@@ -71,15 +77,17 @@ Durations:
   end_of_turn
 
 // Prevent is a cost that the target must pay to stop effect from happening
-Costs: |type amount, type amount| OR |prevent target, type amount, type amount|
+Costs: |type amount,type amount| OR |prevent target,type amount,type amount|
   black, blue, white, green, red, colorless
-  sacrifice_creature
-  tap
-  life
-  counters
-  loyalty
+  sacrifice_creature   
+  discard_creature     
+  tap target
+  life                
+  counters            
+  loyalty              
+  control_land land_type
 Payment Options: 
-  X:target:option Options:
+  amount:target:option   (options:
     +1/+1 (counter type)
     last_turn
   
