@@ -31,8 +31,7 @@ Triggers:
 Turn based:
   upkeep : when : target
 
-Ability effects:
-Actions:
+Ability effects: Amount (number, range 1-5, toughness_last_exiled_creature)
   discard_random    : target : amount
   discard           : target : amount
   add_counter       : target : counter
@@ -46,30 +45,34 @@ Actions:
   gain_ability      : target : keyword_ability
   tap               : target
   disable           : target : what_to_disable
-  transfer_card     : target : to_zone : from_zone
+  transfer_card     : target : to_zone : from_zone : amount (1-3 range)
   draw_card         : target : amount
   gain_loyalty      : target : amount
-  search_library    : target : card_amount
+  search_zone       : target : card_amount : specified_card
   shuffle_library   : target
   add_chosen_card_to_library : target_library : location
   mill              : target : amount   (from top of library to graveyard)
   // play_token puts a token onto the battlefield
   play_token        : type : subtype : color : power : toughness : state  (state: tapped)
   sacrifice_creature : target
+  exile             : target : amount : from_zone
+  name_card
 
 // Convention: w/o the 'target' prefix, it means targets under your control
 Targets: OR -> target/target; AND -> target&target
   player              (yourself)
-  creature            (creature you control)
-  opponent
   target_player       (yourself or opponent)
+  opponent
+  controller          (current controller of card)
+  [color_]creature    (color creature you control)
+  [color_]creatures   (all color creatures you control)
   target_creature     (any creature)
-  self                (card)
   land                (your land)
   target_land         (any land)
+  self                (card)
   any
   all_creatures
-  all_non_black_creatures 
+  non_black_creatures 
   all_non_controlled_creatures
   all_non_controlled_planeswalkers
 
@@ -81,11 +84,13 @@ Costs: |type amount,type amount| OR |prevent target,type amount,type amount|
   black, blue, white, green, red, colorless
   sacrifice_creature   
   discard_creature     
-  tap target
+  tap 
   life                
   counters            
   loyalty              
   control_land land_type
+  exile target
+  exile_from_graveyard
 Payment Options: 
   amount:target:option   (options:
     +1/+1 (counter type)
