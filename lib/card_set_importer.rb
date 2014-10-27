@@ -38,30 +38,43 @@ class CardSetImporter
         power: attrs[4],
         toughness: attrs[5],
         dual_card: attrs[6],
-        type: Type.where(name: attrs[7]).first,
-        subtypes: set_subtypes(attrs[8]),
-        supertype: Supertype.where(name: attrs[9]).first,
+        supertype: Supertype.where(name: attrs[7]).first,
+        type: Type.where(name: attrs[8]).first,
+        subtypes: set_subtypes(attrs[9]),
         type_class: TypeClass.where(name: attrs[10]).first,
         card_set: card_set
       )
     end
 
     def set_subtypes(subtypes)
+      return [] unless subtypes
       subtypes.split(",").map { |st| Subtype.where(name: st).first }
     end
 
     def create_abilities(abilities, card)
       abilities.each do |ability|
         attrs = ability.split("|")
-        if attrs.first == "keyword"
-          card.abilities << Ability.where(name: attrs[1]).first
-        else
-          # create activated or triggered ability
-        end
+        card.abilities << set_ability(attrs)
       end
     end
 
+    def set_ability(attrs)
+      return Ability.where(name: attrs[1]).first if attrs.first == "keyword"
+      Ability.create!(
+        type: attrs.first,
+        name: attrs[1],
+        trigger: attrs[2],
+        cost: parse_mana_cost(attrs[3]),
+        effects: set_effects(attrs[4])
+      )
+    end
+
+    def set_effects(str)
+      str.split(",") unless str.nil?
+    end
+
     def parse_mana_cost(str)
+      return unless str
       str.split(",").reduce({}) do |total_cost, color_cost|
         total_cost.merge({color_cost.split.first => color_cost.split.last})
       end

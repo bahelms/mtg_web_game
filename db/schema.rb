@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024110532) do
+ActiveRecord::Schema.define(version: 20141027111109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,16 +91,6 @@ ActiveRecord::Schema.define(version: 20141024110532) do
   end
 
   add_index "decks", ["user_id"], name: "index_decks_on_user_id", using: :btree
-
-  create_table "effects", force: true do |t|
-    t.string  "name",       null: false
-    t.string  "target"
-    t.string  "result"
-    t.string  "duration"
-    t.integer "ability_id"
-  end
-
-  add_index "effects", ["ability_id"], name: "index_effects_on_ability_id", using: :btree
 
   create_table "formats", force: true do |t|
     t.string "name",          null: false

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe CardSetImporter do
   let(:importer_params) do
-    { csv_name: "test_csv", path: "#{Rails.root}/spec/lib/" }
+    { csv_name: "test_csv", path: "#{Rails.root}/spec/support/" }
   end
   let(:test_csv) do
     File.read("#{importer_params[:path]}#{importer_params[:csv_name]}.csv").

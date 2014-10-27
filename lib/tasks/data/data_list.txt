@@ -1,3 +1,4 @@
+card % ability % ability % ...
 CARD: name|costs,|colors,|rarity|power|toughness|dual|supertype|type|subtypes,|class
 ABILITY: type|name|trigger|costs,|effects,
 
@@ -27,7 +28,7 @@ EFFECT: action:target:option:duration
     sacrifice_creature : target
     exile             : target : amount : from_zone
     name_card
-    add_mana          : color : amount : target_player
+    add_mana          : target_player : color : amount
 
     // play_token puts a token onto the battlefield
     play_token        : type : subtype : color : power : toughness : state  (state: tapped)
@@ -77,7 +78,7 @@ TARGETS: target/target (OR); target&target (AND)
   opponent
   controller          (current controller of card)
   [color_]creature    (color creature you control)
-  [color_]creatures   (all color creatures you control)
+  [non_][color_]creatures   (all color creatures you control)
   target_creature     (any creature)
   land                (your land)
   target_land         (any land)
@@ -86,7 +87,6 @@ TARGETS: target/target (OR); target&target (AND)
   graveyard
   target_graveyard
   all_graveyards
-  non_black_creatures 
   all_creatures     : target_player
   all_planeswalkers : target_player
 

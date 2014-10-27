@@ -5,7 +5,7 @@ Blood Host|black 2,colorless 3|black|uncommon|3|3|||creature|Vampire%activated||
 Carrion Crow|black 1,colorless 2|black|common|2|2|||creature|Zombie,Bird%keyword|Flying%triggered||zone_change:battlefield||tap:self
 Caustic Tar|black 2,colorless 4|black|uncommon|||||enchantment|Aura%triggered||resolved||enchant:target_land%activated|||tap|lose_life:target_player:3
 Child of Night|black 1,colorless 1|black|common|2|1|||creature|Vampire%keyword|Lifelink
-Covenant fo Blood|black 1,colorless 6|black|common|||||sorcery%keyword|Convoke%triggered||resolved||damage:target_creature/target_player:4,gain_life:player:4
+Covenant of Blood|black 1,colorless 6|black|common|||||sorcery%keyword|Convoke%triggered||resolved||damage:target_creature/target_player:4,gain_life:player:4
 Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered||resolved||enchant:target_creature%static||||add_counter:self:-1/-1%static||||disable:self:block
 Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated|||black 1,tap self,life 1|add_counter:self:+1/+1%activated|||black 1,colorless 2,tap self,counters X:self:+1/+1|damage:target_creature:X
 Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered||resolved||control_creature:target_creature:target_graveyard:battlefield
@@ -30,13 +30,13 @@ Rotfeaster Maggot|black 1,colorless 4|black|common|3|5|||creature|Insect%trigger
 Shadowcloak Vampire|black 1,colorless 4|black|common|4|3|||creature|Vampire%activated|||life 2|gain_ability:self:Flying:end_of_turn
 Sign in Blood|black 2|black|common|||||sorcery%triggered||resolved||draw_card:target_player:2,lose_life:target_player:2
 Soul of Innistrad|black 2,colorless 4|black|mythic rare|6|6|||creature|Avatar%keyword|Deathtouch%activated|||black 2,colorless 3|transfer_card:target_creature:graveyard:hand:0-3%activated|||black 2,colorless 3,exile_from_graveyard self|transfer_card:target_creature:graveyard:hand:0-3
-Stab Wound|black 1,colorless 2|black|uncommon|||||enchantment|Aura%triggered||resolved||enchant:creature%static||||add_counter:self:-2/-2%triggered||upkeep:beginning:controller||lose_life:controller:2
+Stab Wound|black 1,colorless 2|black|uncommon|||||enchantment|Aura%triggered||resolved||enchant:target_creature%static||||add_counter:self:-2/-2%triggered||upkeep:beginning:controller||lose_life:controller:2
 Stain the Mind|black 1,colorless 4|black|rare|||||sorcery%keyword|Convoke%triggered||resolved||name_card,search_zone:target_library:X:named_card,search_zone:target_graveyard:X:named_card,search_zone:target_hand:X:named_card,exile:named_card:X,shuffle_library:targeted_player
 Typhoid Rats|black 1|black|common|1|1|||creature|Rat%keyword|Deathtouch
 Ulcerate|black 1|black|uncommon|||||instant%triggered||resolved||add_counter:target_creature:-3/-3:end_of_turn,lose_life:player:3
 Unmake the Graves|black 1,colorless 4|black|common|||||instant%keyword|Convoke%triggered||resolved||transfer_card:target_creature:graveyard:hand:0-2
 Wall of Limbs|black 1,colorless 2|black|uncommon|0|3|||creature|Zombie,Wall%keyword|Defender%triggered||gain_life:player||add_counter:self:+1/+1%activated|||black 2,colorless 5,sacrifice self|lose_life:target_player:power_self
-Waste Not|black 1,colorless 1|black|rare|||||enchantment%triggered||resolved||enchant:player%triggered||discard:creature:opponent||play_token:creature:Zombie:black:2:2%triggered||discard:land:opponent||add_mana:black:2:player%triggered||discard:not_creature&not_land:opponent|draw_card:player:1
+Waste Not|black 1,colorless 1|black|rare|||||enchantment%triggered||resolved||enchant:player%triggered||discard:creature:opponent||play_token:creature:Zombie:black:2:2%triggered||discard:land:opponent||add_mana:player:black:2%triggered||discard:not_creature&not_land:opponent|draw_card:player:1
 Witch's Familiar|black 1,colorless 2|black|common|2|3|||creature|Frog
 Xathrid Slyblade|black 1,colorless 2|black|uncommom|2|1|||creature|Human|Assassin%keyword|Hexproof%activated|||black 1,colorless 3|lose_ability:self:Hexproof:end_of_turn,gain_ability:self:First_Strike:end_of_turn,gain_ability:self:Deathtouch:end_of_turn
 Zof Shade|black 1,colorless 3|black|common|2|2|||creature|Shade%activated|||black 1,colorless 2|add_counter:self:+2/+2:end_of_turn
