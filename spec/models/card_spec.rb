@@ -1,16 +1,11 @@
 require "rails_helper"
 
 describe Card do
-  before do
-    CardSetImporter.new(csv_name: "test_csv", path: "#{Rails.root}/spec/support/").import
-  end
+  let(:card) { create(:card) }
 
-  subject { described_class }
-
-  describe "#abilities" do
+  describe "#all_abilities" do
     it "returns all abilities and keyword abilities" do
-      pending
-      fail
+      expect(card.all_abilities.size).eq 3
     end
   end
 end
