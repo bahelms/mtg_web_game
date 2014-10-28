@@ -44,8 +44,6 @@ class CardSetImporter
         type_class: TypeClass.where(name: attrs[10]).first,
         card_set: card_set
       )
-    rescue
-      puts "Card: #{attrs[0]}"
     end
 
     def set_subtypes(subtypes)
@@ -56,18 +54,21 @@ class CardSetImporter
     def create_abilities(abilities, card)
       abilities.each do |ability|
         attrs = ability.split("|")
-        card.abilities << set_ability(attrs)
+        if attrs.first == "keyword"
+          card.keyword_abilities << KeywordAbility.where(keyword: attrs[1]).first
+        else
+          card.abilities.create(ability_params(attrs))
+        end
       end
     end
 
-    def set_ability(attrs)
-      Ability.create!(
+    def ability_params(attrs)
+      {
         type: attrs.first,
-        name: attrs[1],
-        trigger: attrs[2],
-        cost: parse_mana_cost(attrs[3]),
-        effects: set_effects(attrs[4])
-      )
+        trigger: attrs[1],
+        cost: parse_mana_cost(attrs[2]),
+        effects: set_effects(attrs[3])
+      }
     end
 
     def set_effects(str)

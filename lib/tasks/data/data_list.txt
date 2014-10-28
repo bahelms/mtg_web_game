@@ -1,6 +1,7 @@
 card % ability % ability % ...
 CARD: name|costs,|colors,|rarity|power|toughness|dual|supertype|type|subtypes,|class
-ABILITY: type|name|trigger|costs,|effects,
+KEYWORD_ABILITY: type|name
+ANONYMOUS_ABILITY: type|trigger|costs,|effects,
 
 EFFECT: action:target:option:duration
   actions: name:target:option

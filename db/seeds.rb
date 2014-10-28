@@ -18,7 +18,7 @@ Supertype.destroy_all
 Type.destroy_all
 TypeClass.destroy_all
 Subtype.destroy_all
-Ability.where(type: :keyword).destroy_all
+KeywordAbility.destroy_all
 
 formats.each { |f| Format.create!(name: f) }
 supertypes.each { |st| Supertype.create!(name: st) }
@@ -34,5 +34,5 @@ subtypes.each do |sub|
 end
 
 keyword_abilities = File.read("db/keyword_abilities.csv").split("\n")
-keyword_abilities.each { |a| Ability.create!(type: :keyword, name: a) }
+keyword_abilities.each { |a| KeywordAbility.create!(keyword: a) }
 

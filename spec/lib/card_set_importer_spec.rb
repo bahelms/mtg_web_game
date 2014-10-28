@@ -13,11 +13,7 @@ describe CardSetImporter do
 
   describe "#initialize" do
     it "requires a csv file name" do
-      expect { described_class.new(path: "") }.to raise_error(KeyError)
-    end
-
-    it "accepts an optional path for the csv file" do
-      pending
+      expect { described_class.new(trash: :trash) }.to raise_error(KeyError)
     end
   end
 
@@ -47,11 +43,11 @@ describe CardSetImporter do
       expect(Card.where(card_set: CardSet.first).size).to eq card_count
     end
 
-    it "saves all card Abilities specified in the file" do
+    it "saves all card anonymous Abilities specified in the file" do
       subject.import
       cards = Card.where(card_set: CardSet.first)
       abilities_count = cards.reduce(0) do |sum, card|
-        sum + card.abilities.count
+        sum + card.abilities.count + card.keyword_abilities.count
       end
       expect(abilities_count).to eq total_abilities_in_test_csv
     end
