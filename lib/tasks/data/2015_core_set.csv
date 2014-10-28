@@ -40,4 +40,4 @@ Waste Not|black 1,colorless 1|black|rare|||||enchantment%triggered||resolved||en
 Witch's Familiar|black 1,colorless 2|black|common|2|3|||creature|Frog
 Xathrid Slyblade|black 1,colorless 2|black|uncommom|2|1|||creature|Human|Assassin%keyword|Hexproof%activated|||black 1,colorless 3|lose_ability:self:Hexproof:end_of_turn,gain_ability:self:First_Strike:end_of_turn,gain_ability:self:Deathtouch:end_of_turn
 Zof Shade|black 1,colorless 3|black|common|2|2|||creature|Shade%activated|||black 1,colorless 2|add_counter:self:+2/+2:end_of_turn
-Zombie Token||black||||||creature|Zombie
+Zombie Token||black|token|||||creature|Zombie

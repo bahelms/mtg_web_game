@@ -11,27 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027111109) do
+ActiveRecord::Schema.define(version: 20141028112038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
   create_table "abilities", force: true do |t|
-    t.string "name"
-    t.text   "trigger"
-    t.string "type",                 null: false
-    t.hstore "cost"
-    t.string "effects", default: [],              array: true
-  end
-
-  create_table "abilities_cards", id: false, force: true do |t|
+    t.string  "type",                 null: false
+    t.string  "trigger"
+    t.hstore  "cost"
+    t.string  "effects", default: [],              array: true
     t.integer "card_id"
-    t.integer "ability_id"
   end
 
-  add_index "abilities_cards", ["ability_id"], name: "index_abilities_cards_on_ability_id", using: :btree
-  add_index "abilities_cards", ["card_id"], name: "index_abilities_cards_on_card_id", using: :btree
+  add_index "abilities", ["card_id"], name: "index_abilities_on_card_id", using: :btree
 
   create_table "card_sets", force: true do |t|
     t.string   "name",       null: false
@@ -77,6 +71,14 @@ ActiveRecord::Schema.define(version: 20141027111109) do
   add_index "cards_decks", ["card_id"], name: "index_cards_decks_on_card_id", using: :btree
   add_index "cards_decks", ["deck_id"], name: "index_cards_decks_on_deck_id", using: :btree
 
+  create_table "cards_keyword_abilities", id: false, force: true do |t|
+    t.integer "card_id"
+    t.integer "keyword_ability_id"
+  end
+
+  add_index "cards_keyword_abilities", ["card_id"], name: "index_cards_keyword_abilities_on_card_id", using: :btree
+  add_index "cards_keyword_abilities", ["keyword_ability_id"], name: "index_cards_keyword_abilities_on_keyword_ability_id", using: :btree
+
   create_table "cards_subtypes", id: false, force: true do |t|
     t.integer "card_id"
     t.integer "subtype_id"
@@ -95,6 +97,12 @@ ActiveRecord::Schema.define(version: 20141027111109) do
   create_table "formats", force: true do |t|
     t.string "name",          null: false
     t.string "illegal_cards",              array: true
+  end
+
+  create_table "keyword_abilities", force: true do |t|
+    t.string "keyword",              null: false
+    t.string "effects", default: [],              array: true
+    t.hstore "cost"
   end
 
   create_table "subtypes", force: true do |t|

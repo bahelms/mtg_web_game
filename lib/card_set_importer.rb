@@ -1,6 +1,6 @@
 class CardSetImporter
   def initialize(options)
-    @default_path = options.fetch(:path)
+    @default_path = options.fetch(:path) { "#{Rails.root}/lib/tasks/data/" }
     @csv = load_csv(options.fetch(:csv_name))
   end
 
@@ -44,6 +44,8 @@ class CardSetImporter
         type_class: TypeClass.where(name: attrs[10]).first,
         card_set: card_set
       )
+    rescue
+      puts "Card: #{attrs[0]}"
     end
 
     def set_subtypes(subtypes)
@@ -59,7 +61,6 @@ class CardSetImporter
     end
 
     def set_ability(attrs)
-      return Ability.where(name: attrs[1]).first if attrs.first == "keyword"
       Ability.create!(
         type: attrs.first,
         name: attrs[1],

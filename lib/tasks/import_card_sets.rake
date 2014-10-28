@@ -1,5 +1,7 @@
 task :import_set, [:csv] => :environment do |task, args|
   desc "Import an entire card set specified in a csv"
-  CardSetImporter.new(args[:csv]).import
+  desc "Argument: csv name without extension"
+
+  CardSetImporter.new(csv_name: args[:csv]).import
 end
 

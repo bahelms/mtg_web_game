@@ -16,8 +16,8 @@ describe CardSetImporter do
       expect { described_class.new(path: "") }.to raise_error(KeyError)
     end
 
-    it "requires a default path for the csv file" do
-      expect { described_class.new(csv_name: "") }.to raise_error(KeyError)
+    it "accepts an optional path for the csv file" do
+      pending
     end
   end
 
@@ -53,8 +53,12 @@ describe CardSetImporter do
       abilities_count = cards.reduce(0) do |sum, card|
         sum + card.abilities.count
       end
-      expect(abilities_count).to eq 2
+      expect(abilities_count).to eq total_abilities_in_test_csv
     end
+  end
+
+  def total_abilities_in_test_csv
+    test_csv.map { |row| row.split("%").size - 1 }.reduce(&:+)
   end
 end
 
