@@ -9,8 +9,8 @@ describe Card do
 
   describe "#abilities" do
     it "returns all abilities and keyword abilities" do
-      byebug
-      # subject.first.abilities
+      pending
+      fail
     end
   end
 end
