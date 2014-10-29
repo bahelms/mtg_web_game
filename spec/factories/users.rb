@@ -7,3 +7,4 @@ FactoryGirl.define do
     password_confirmation "@123abc!"
   end
 end
+

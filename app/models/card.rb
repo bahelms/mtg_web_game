@@ -10,5 +10,9 @@ class Card < ActiveRecord::Base
   belongs_to :supertype
   belongs_to :type
   belongs_to :type_class
+
+  def all_abilities
+    @all_abilities ||= abilities + keyword_abilities
+  end
 end
 
