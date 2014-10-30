@@ -20,11 +20,11 @@ EFFECT: action:target:option:duration
     tap               : target
     disable           : target : what_to_disable
     transfer_card     : target : from_zone : to_zone : amount (1-3 range)
+    transfer_to_library : targets : target_status : target_library : location (status: attacking)
     draw_card         : target : amount
     gain_loyalty      : target : amount
-    search_zone       : target : card_amount : specified_card
+    search_zone       : target : specified_card : card_amount
     shuffle_library   : target
-    add_chosen_card_to_library : target_library : location
     mill              : target : amount   (from top of library to graveyard)
     sacrifice_creature : target
     exile             : target : amount : from_zone
@@ -52,7 +52,7 @@ COST: type amount IF |prevent target,| the costs are to prevent ability effects
     life                
     counters            
     loyalty              
-    control_land land_type
+    control_card type:subtype
     exile target
     exile_from_graveyard
   amount: amount:target:option
@@ -66,7 +66,7 @@ TRIGGERS:
   creature_death : target : controller
   creature_attack : target : type : controller
   last_discard_type : discarded_by : card_type
-  search_library : target  
+  zone_searched : zone : target  
   gain_life : target
   discard : types_discarded : controller (type; non_type)
 Turn based:
@@ -85,11 +85,13 @@ TARGETS: target/target (OR); target&target (AND)
   target_land         (any land)
   self                (card)
   any
+  [zone]
+  [target]_[zone]
   graveyard
   target_graveyard
   all_graveyards
-  all_creatures     : target_player
-  all_planeswalkers : target_player
+  all_creatures     : target_player : status (attacking)
+  all_planeswalkers : target_player : status
 
 
 Parse Syntax:

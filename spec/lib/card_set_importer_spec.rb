@@ -43,7 +43,7 @@ describe CardSetImporter do
       expect(Card.where(card_set: CardSet.first).size).to eq card_count
     end
 
-    it "saves all card anonymous Abilities specified in the file" do
+    it "saves all card abilities specified in the file" do
       subject.import
       cards = Card.where(card_set: CardSet.first)
       abilities_count = cards.reduce(0) do |sum, card|

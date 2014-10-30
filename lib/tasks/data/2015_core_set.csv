@@ -17,21 +17,21 @@ Gravedigger|black 1,colorless 3|black|uncommon|2|2|||creature|Zombie%triggered|z
 In Garruk's Wake|black 2,colorless 7|black|rare|||||sorcery%triggered|resolved||destroy:all_creatures:opponent,destroy:all_planeswalkers:opponent
 Indulgent Tormentor|black 2,colorless 3|black|rare|5|3|||creature|Demon%keyword|Flying%triggered|upkeep:beginning:player|prevent target_opponent,life 3/sacrifice_creature 1|draw_card:player:1
 Leeching Sliver|black 1,colorless 1|black|uncommon|1|1|||creature|Sliver%triggered|creature_attack:any:Sliver:player||lose_life:opponent:1
-Liliana Vess|black 2,colorless 3|black|mythic rare|5||||planeswalker|Liliana%loyalty|||discard:target_player:1,gain_loyalty:self:1%loyalty||loyalty 2|search_zone:library:player:1,shuffle_library:player,add_chosen_card_to_library:player:top%loyalty||loyalty 8|control_creature:all_creatures:all_graveyards:battlefield
+Liliana Vess|black 2,colorless 3|black|mythic rare|5||||planeswalker|Liliana%loyalty|||discard:target_player:1,gain_loyalty:self:1%loyalty||loyalty 2|search_zone:library:any:1,shuffle_library:player,transfer_to_library:chosen_card:player:top%loyalty||loyalty 8|control_creature:all_creatures:all_graveyards:battlefield
 Mind Rot|black 1,colorless 2|black|common|||||sorcery%triggered|resolved||discard:target_player:2
 Necrobite|black 1,colorless 2|black|common|||||instant%triggered|resolved||gain_ability:target_creature:Deathtouch:end_of_turn,gain_ability:target_creature:Regeneration:end_of_turn
 Necrogen Scudder|black 1,colorless 2|black|uncommon|3|3|||creature|Horror%keyword|Flying%triggered|zone_change:battlefield||lose_life:player:3
 Necromancer's Assistant|black 1,colorless 2|black|common|3|1|||creature|Zombie%triggered|zone_change:battlefield||mill:player:3
 Necromancer's Stockpile|black 1,colorless 1|black|rare|||||enchantment%triggered|resolved||enchant:player%activated||black 1,colorless 1,discard_creature 1|draw_card:player:1%triggered|last_discard_type:player:Zombie||play_token:creature:Zombie:black:2:2:tapped
-Nightfire Giant|black 1,colorless 4|black|uncommon|4|3|||creature|Zombie,Giant%static||control_land Mountain|add_counter:self:+1/+1%activated||red 1,colorless 4|damage:target_creature/target_player:2
-Ob Nixilis, Unshackled|black 2,colorless 4|black|rare|4|4||legendary|creature|Demon%keyword|Flying%keyword|Trample%triggered|search_zone:library:opponent||sacrifice_creature:opponent,lose_life:opponent:10%triggered|creature_death:any:any||add_counter:self:+1/+1
+Nightfire Giant|black 1,colorless 4|black|uncommon|4|3|||creature|Zombie,Giant%static||control_card land:Mountain|add_counter:self:+1/+1%activated||red 1,colorless 4|damage:target_creature/target_player:2
+Ob Nixilis, Unshackled|black 2,colorless 4|black|rare|4|4||legendary|creature|Demon%keyword|Flying%keyword|Trample%triggered|zone_searched:library:opponent||sacrifice_creature:opponent,lose_life:opponent:10%triggered|creature_death:any:any||add_counter:self:+1/+1
 Paragon of Open Graves|black 1,colorless 3|black|uncommon|2|2|||creature|Skeleton|Warrior%static|||add_counter:black_creatures:+1/+1%activated||black 1,colorless 2,tap|gain_ability:black_creature:Deathtouch:end_of_turn
 Rotfeaster Maggot|black 1,colorless 4|black|common|3|5|||creature|Insect%triggered|zone_change:battlefield||exile:target_creature:1:target_graveyard,gain_life:player:toughness_last_exiled_creature
 Shadowcloak Vampire|black 1,colorless 4|black|common|4|3|||creature|Vampire%activated||life 2|gain_ability:self:Flying:end_of_turn
 Sign in Blood|black 2|black|common|||||sorcery%triggered|resolved||draw_card:target_player:2,lose_life:target_player:2
 Soul of Innistrad|black 2,colorless 4|black|mythic rare|6|6|||creature|Avatar%keyword|Deathtouch%activated||black 2,colorless 3|transfer_card:target_creature:graveyard:hand:0-3%activated||black 2,colorless 3,exile_from_graveyard self|transfer_card:target_creature:graveyard:hand:0-3
 Stab Wound|black 1,colorless 2|black|uncommon|||||enchantment|Aura%triggered|resolved||enchant:target_creature%static|||add_counter:self:-2/-2%triggered|upkeep:beginning:controller||lose_life:controller:2
-Stain the Mind|black 1,colorless 4|black|rare|||||sorcery%keyword|Convoke%triggered|resolved||name_card,search_zone:target_library:X:named_card,search_zone:target_graveyard:X:named_card,search_zone:target_hand:X:named_card,exile:named_card:X,shuffle_library:targeted_player
+Stain the Mind|black 1,colorless 4|black|rare|||||sorcery%keyword|Convoke%triggered|resolved||name_card,search_zone:target_library:named_card:X,search_zone:target_graveyard:named_card:X,search_zone:target_hand:named_card:X,exile:named_card:X,shuffle_library:targeted_player
 Typhoid Rats|black 1|black|common|1|1|||creature|Rat%keyword|Deathtouch
 Ulcerate|black 1|black|uncommon|||||instant%triggered|resolved||add_counter:target_creature:-3/-3:end_of_turn,lose_life:player:3
 Unmake the Graves|black 1,colorless 4|black|common|||||instant%keyword|Convoke%triggered|resolved||transfer_card:target_creature:graveyard:hand:0-2
@@ -41,3 +41,5 @@ Witch's Familiar|black 1,colorless 2|black|common|2|3|||creature|Frog
 Xathrid Slyblade|black 1,colorless 2|black|uncommom|2|1|||creature|Human|Assassin%keyword|Hexproof%activated||black 1,colorless 3|lose_ability:self:Hexproof:end_of_turn,gain_ability:self:First_Strike:end_of_turn,gain_ability:self:Deathtouch:end_of_turn
 Zof Shade|black 1,colorless 3|black|common|2|2|||creature|Shade%activated||black 1,colorless 2|add_counter:self:+2/+2:end_of_turn
 Zombie Token||black|token|||||creature|Zombie
+Aeronaut Tinkerer|blue 1,colorless 2|blue|common|2|3|||creature|Human|Artificer%static||control_card artifact|gain_ability:self:Flying
+Aetherspouts|blue 2,colorless 3|blue|rare|||||instant%triggered|resolved||transfer_to_library:all_creatures:attacking:controller:top/bottom
