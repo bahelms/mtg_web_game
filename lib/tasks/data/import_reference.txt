@@ -19,14 +19,10 @@ EFFECT: action:target:option:duration
     lose_ability      : target : keyword_ability
     tap               : target
     disable           : target : what_to_disable (block)
-
-    transfer_card     : target : from_zone : to_zone : amount (1-3 range)
-    transfer_to_library : targets : target_status : target_library : location (status: attacking)
-    transfer_card : targets : from_zone : to_zone : location_in_zone : amount 
-
+    transfer_card     : targets : from_zone : to_zone : location_in_zone : amount 
     draw_card         : target : amount
     gain_loyalty      : target : amount
-    search_zone       : target : specified_card : card_amount
+    search_zone       : target_zone : target_card : card_amount
     shuffle_library   : target
     mill              : target : amount   (from top of library to graveyard)
     sacrifice_creature : target
@@ -67,8 +63,8 @@ COST: type amount IF |prevent target,| the costs are to prevent ability effects
 TRIGGERS:
   resolved
   zone_change : to_zone : from_zone
-  creature_death : target : controller
-  creature_attack : target : type : controller
+  death : target
+  attack : target
   last_discard_type : discarded_by : card_type
   zone_searched : zone : target  
   gain_life : target
@@ -84,11 +80,11 @@ target/target (OR); target&target (AND)
   [all_/non_][color_][type(s)/zone(s)/other] . controller . target_card . status
 
   other: 
-    player              (yourself)
+    player       (yourself)
     opponent
-    self                (card)
-    controller          (current controller of card)
-    any
+    self         (card)
+    controller   (current controller of card)
+    any          (any card)
     chosen_card
     card_owner
   controller: player, opponent, card_owner, any
