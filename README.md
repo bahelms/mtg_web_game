@@ -2,6 +2,11 @@
 
 This app is my homemade, free version of MTG Online. 
 
+###Development Setup 
+    bundle exec rake db:migrate
+    bundle exec rake db:seed
+    bundle exec rake import_all_sets
+
 ###TODO
 
 * DB
@@ -12,5 +17,6 @@ This app is my homemade, free version of MTG Online.
 * Game engine
 
 * Lobby chat
+  * Fix autoscrolling
   * Click on user and invite to game
   * Private chat?
