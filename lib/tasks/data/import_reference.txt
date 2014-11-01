@@ -6,7 +6,7 @@ ANONYMOUS_ABILITY: type|trigger|costs,|effects,
 EFFECT: action:target:option:duration
   actions: name:target:option
     discard_random    : target : amount
-    discard           : target : amount
+    discard           : target_card : amount
     add_counter       : target : counter
     gain_life         : target : amount
     lose_life         : target : amount  (can't be prevented by damage prevention)
@@ -19,7 +19,7 @@ EFFECT: action:target:option:duration
     lose_ability      : target : keyword_ability
     tap               : target
     disable           : target : what_to_disable (block)
-    transfer_card     : targets : from_zone : to_zone : location_in_zone : amount 
+    transfer_card     : target : from_zone : to_zone : location_in_zone : amount 
     draw_card         : target : amount
     gain_loyalty      : target : amount
     search_zone       : target_zone : target_card : card_amount
@@ -27,16 +27,16 @@ EFFECT: action:target:option:duration
     mill              : target : amount   (from top of library to graveyard)
     sacrifice_creature : target
     exile             : target : amount : from_zone
-    name_card
+    name_card         : target
     add_mana          : target_player : color : amount
 
     // play_token puts a token onto the battlefield
-    play_tokens        : amount : type : subtype : color : power : toughness : state : keyword_abilities (state: tapped)
+    play_token        : amount : type : subtype : color : power : toughness : state : keyword_abilities (state: tapped)
 
     amounts: 
       number 
       range 1-5 
-      toughness_last_exiled_creature 
+      last_exiled_creature_toughness
       power_self
       counters_self
   duration:
@@ -66,7 +66,7 @@ TRIGGERS:
   death : target
   attack : target
   last_discard_type : discarded_by : card_type
-  zone_searched : zone : target  
+  zone_searched : target_zone
   gain_life : target
   discard : types_discarded : controller (type; non_type)
   draw_card : target 
@@ -86,6 +86,8 @@ target/target (OR); target&target (AND)
     controller   (current controller of card)
     any          (any card)
     chosen_card
+    named_card
+    random_card
     card_owner
   controller: player, opponent, card_owner, any
 
