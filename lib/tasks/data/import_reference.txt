@@ -29,6 +29,7 @@ EFFECT: action:target:option:duration
     exile             : target : amount : from_zone
     name_card         : target
     add_mana          : target_player : color : amount
+    counter           : target_spell/ability
 
     // play_token puts a token onto the battlefield
     play_token        : amount : type : subtype : color : power : toughness : state : keyword_abilities (state: tapped)
@@ -70,6 +71,7 @@ TRIGGERS:
   gain_life : target
   discard : types_discarded : controller (type; non_type)
   draw_card : target 
+  targeted : target : targeted_action
 Turn based:
   upkeep : when : target
 
@@ -89,8 +91,9 @@ target/target (OR); target&target (AND)
     named_card
     random_card
     card_owner
+    spell
+    ability
   controller: player, opponent, card_owner, any
-
 
 Parse Syntax:
   / => Or
