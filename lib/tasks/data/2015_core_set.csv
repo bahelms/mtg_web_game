@@ -46,3 +46,4 @@ Aetherspouts|blue 2,colorless 3|blue|rare|||||instant%triggered|resolved||transf
 Amphin Pathmage|blue 1,coloress 3|blue|common|3|2|||creature|Salamander|Wizard%activated||blue 1,colorless 2|gain_ability:creature.any:Unblockable:end_of_turn
 Chasm Skulker|blue 1,colorless 2|blue|rare|1|1|||creature|Squid,Horror%triggered|draw_card:player||add_counter:self:+1/+1%triggered|death:self||play_token:counters_self:creature:Squid:blue:1:1::Islandwalk
 Chief Engineer|blue 1,coloress 1|blue|rare|1|3|||creature|Vedalken|Artificer%static|||gain_ability:all_artifacts.player:Convoke
+Chronostutter|blue 1,colorless 5|blue|common|||||instant%triggered|resolved||transfer_card:creature.any::library.card_owner:top-1
