@@ -18,7 +18,7 @@ EFFECT: action:target:option:duration
     gain_ability      : target : keyword_ability
     lose_ability      : target : keyword_ability
     tap               : target
-    disable           : target : what_to_disable (block)
+    disable           : target : what_to_disable (block, untap, activated_abilities, attack)
     transfer_card     : target : from_zone : to_zone : location_in_zone : amount 
     draw_card         : target : amount
     gain_loyalty      : target : amount
@@ -30,6 +30,8 @@ EFFECT: action:target:option:duration
     name_card         : target
     add_mana          : target_player : color : amount
     counter           : target_spell/ability
+    add_type          : target : type  (creature.power.toughness)
+    cannot_cast  (this spell cannot be cast)
 
     // play_token puts a token onto the battlefield
     play_token        : amount : type : subtype : color : power : toughness : state : keyword_abilities (state: tapped)
@@ -42,6 +44,7 @@ EFFECT: action:target:option:duration
       counters_self
   duration:
     end_of_turn
+    next_untap_step
 
 COST: type amount IF |prevent target,| the costs are to prevent ability effects
   types: 
@@ -53,9 +56,11 @@ COST: type amount IF |prevent target,| the costs are to prevent ability effects
     life                
     counters            
     loyalty              
-    control_card type:subtype
+    control_card target_card
     exile target
     exile_from_graveyard
+    card_in_zone target_card:zone
+    cast_spell_count (the number of spells previously cast must be at least 1)
   amount: amount:target:option
     X 
     options:
@@ -94,6 +99,9 @@ target/target (OR); target&target (AND)
     spell
     ability
   controller: player, opponent, card_owner, any
+  target_card: 
+    type
+    target (card targeted by previous effect/ability)
 
 Parse Syntax:
   / => Or
