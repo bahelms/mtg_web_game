@@ -1,0 +1,8 @@
+New Card Set
+Accursed Spirit|black 1,colorless 3|black|common|3|2|||creature|Spirit%keyword|Intimidate
+Black Cat|black 1,colorless 1|black|common|1|1|||creature|Zombie,Cat%triggered|zone_change:graveyard||discard_random:opponent:1
+Blood Host|black 2,colorless 3|black|uncommon|3|3|||creature|Vampire%activated||black 1,colorless 1,sacrifice_creature 1|add_counter:self:+1/+1,gain_life:player:2
+Wall of Limbs|black 1,colorless 2|black|uncommon|0|3|||creature|Zombie,Wall%keyword|Defender%triggered|gain_life:player||add_counter:self:+1/+1%activated||black 2,colorless 5,sacrifice self|lose_life:target_player:power_self
+Waste Not|black 1,colorless 1|black|rare|||||enchantment%triggered|resolved||enchant:player%triggered|discard:creature:opponent||play_token:creature:Zombie:black:2:2%triggered|discard:land:opponent||add_mana:player:black:2%triggered|discard:not_creature&not_land:opponent|draw_card:player:1
+Witch's Familiar|black 1,colorless 2|black|common|2|3|||creature|Frog
+Zombie Token||black|token|||||creature|Zombie

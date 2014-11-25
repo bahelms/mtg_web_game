@@ -22,6 +22,7 @@ gem "websocket-rails", "~> 0.7.0"
 # gem "websocket-rails", path: "~/rails/websocket-rails"
 
 group :development, :test do
+  gem "awesome_print", "~> 1.2.0"
   gem "byebug", "~> 3.4.0"
   gem "spring", "~> 1.1.3"
 end

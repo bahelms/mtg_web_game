@@ -1,0 +1,61 @@
+2015 Core Set
+Accursed Spirit|black 1,colorless 3|black|common|3|2|||creature|Spirit%keyword|Intimidate
+Black Cat|black 1,colorless 1|black|common|1|1|||creature|Zombie,Cat%triggered|death:self||discard:random_card.opponent:1
+Blood Host|black 2,colorless 3|black|uncommon|3|3|||creature|Vampire%activated||black 1,colorless 1,sacrifice_creature 1|add_counter:self:+1/+1,gain_life:player:2
+Carrion Crow|black 1,colorless 2|black|common|2|2|||creature|Zombie,Bird%keyword|Flying%triggered|zone_change:battlefield||tap:self
+Caustic Tar|black 2,colorless 4|black|uncommon|||||enchantment|Aura%triggered|resolved||enchant:land.any%activated||tap self|lose_life:player/opponent:3
+Child of Night|black 1,colorless 1|black|common|2|1|||creature|Vampire%keyword|Lifelink
+Covenant of Blood|black 1,colorless 6|black|common|||||sorcery%keyword|Convoke%triggered|resolved||damage:creature.any/player/opponent:4,gain_life:player:4
+Crippling Blight|black 1|black|common|||||enchantment|Aura%triggered|resolved||enchant:creature.any%static|||add_counter:self:-1/-1%static|||disable:self:block
+Cruel Sadist|black 1|black|rare|1|1|||creature|Human|Assassin%activated||black 1,tap self,life 1|add_counter:self:+1/+1%activated||black 1,colorless 2,tap self,counters X:self:+1/+1|damage:creature.any:X
+Endless Obedience|black 2,colorless 4|black|uncommon|||||sorcery%keyword|Convoke%triggered|resolved||control_creature:creature.any:graveyard.any:battlefield
+Eternal Thirst|black 1,colorless 1|black|common|||||enchantment|Aura%triggered|resolved||enchant:creature.any%keyword|Lifelink%triggered|death:creature.opponent||add_counter:self:+1/+1
+Feast on the Fallen|black 1,colorless 2|black|uncommon|||||enchantment%triggered|resolved||enchant:player%triggered|upkeep:beginning:player&opponent|life X:opponent:last_turn|add_counter:creature.player:+1/+1
+Festergloom|black 1,colorless 2|black|common|||||sorcery%triggered|resolved||add_counter:non_black_creatures.any:-1/-1:end_of_turn
+Flesh to Dust|black 2,colorless 3|black|common|||||instant%triggered|resolved||destroy:creature.any,prevent_ability:creature.any:Regeneration
+Gravedigger|black 1,colorless 3|black|uncommon|2|2|||creature|Zombie%triggered|zone_change:battlefield||transfer_card:creature.player:graveyard.player:hand.player:0-1
+In Garruk's Wake|black 2,colorless 7|black|rare|||||sorcery%triggered|resolved||destroy:all_creatures.opponent,destroy:all_planeswalkers.opponent
+Indulgent Tormentor|black 2,colorless 3|black|rare|5|3|||creature|Demon%keyword|Flying%triggered|upkeep:beginning:player|prevent opponent,life 3/sacrifice_creature 1|draw_card:player:1
+Leeching Sliver|black 1,colorless 1|black|uncommon|1|1|||creature|Sliver%triggered|attack:creature.player.Sliver||lose_life:opponent:1
+Liliana Vess|black 2,colorless 3|black|mythic rare|5||||planeswalker|Liliana%loyalty|||discard:any.player/opponent:1,gain_loyalty:self:1%loyalty||loyalty 2|search_zone:library.player:any:1,shuffle_library:player,transfer_card:chosen_card::library:top%loyalty||loyalty 8|control_creature:all_creatures:all_graveyards:battlefield
+Mind Rot|black 1,colorless 2|black|common|||||sorcery%triggered|resolved||discard:any.player/opponent:2
+Necrobite|black 1,colorless 2|black|common|||||instant%triggered|resolved||gain_ability:creature.any:Deathtouch:end_of_turn,gain_ability:creature.any:Regeneration:end_of_turn
+Necrogen Scudder|black 1,colorless 2|black|uncommon|3|3|||creature|Horror%keyword|Flying%triggered|zone_change:battlefield||lose_life:player:3
+Necromancer's Assistant|black 1,colorless 2|black|common|3|1|||creature|Zombie%triggered|zone_change:battlefield||mill:player:3
+Necromancer's Stockpile|black 1,colorless 1|black|rare|||||enchantment%triggered|resolved||enchant:player%activated||black 1,colorless 1,discard_creature 1|draw_card:player:1%triggered|last_discard_type:player:Zombie||play_token:1:creature:Zombie:black:2:2:tapped
+Nightfire Giant|black 1,colorless 4|black|uncommon|4|3|||creature|Zombie,Giant%static||control_card land.player.Mountain|add_counter:self:+1/+1%activated||red 1,colorless 4|damage:creature.any/player/opponent:2
+Ob Nixilis, Unshackled|black 2,colorless 4|black|rare|4|4||legendary|creature|Demon%keyword|Flying%keyword|Trample%triggered|zone_searched:library.opponent||sacrifice_creature:opponent,lose_life:opponent:10%triggered|death:creature.any||add_counter:self:+1/+1
+Paragon of Open Graves|black 1,colorless 3|black|uncommon|2|2|||creature|Skeleton|Warrior%static|||add_counter:black_creatures.player:+1/+1%activated||black 1,colorless 2,tap self|gain_ability:black_creature.player:Deathtouch:end_of_turn
+Rotfeaster Maggot|black 1,colorless 4|black|common|3|5|||creature|Insect%triggered|zone_change:battlefield||exile:creature.any:1:graveyard.any,gain_life:player:last_exiled_creature_toughness
+Shadowcloak Vampire|black 1,colorless 4|black|common|4|3|||creature|Vampire%activated||life 2|gain_ability:self:Flying:end_of_turn
+Sign in Blood|black 2|black|common|||||sorcery%triggered|resolved||draw_card:player/opponent:2,lose_life:player/opponent:2
+Soul of Innistrad|black 2,colorless 4|black|mythic rare|6|6|||creature|Avatar%keyword|Deathtouch%activated||black 2,colorless 3|transfer_card:creature.player:graveyard.player:hand.player:0-3%activated||black 2,colorless 3,exile_from_graveyard self|transfer_card:creature.player:graveyard.player:hand.player:0-3
+Stab Wound|black 1,colorless 2|black|uncommon|||||enchantment|Aura%triggered|resolved||enchant:creature.any%static|||add_counter:self:-2/-2%triggered|upkeep:beginning:controller||lose_life:controller:2
+Stain the Mind|black 1,colorless 4|black|rare|||||sorcery%keyword|Convoke%triggered|resolved||name_card:non_land,search_zone:library.any&graveyard.any&hand.any:named_card:X,exile:named_card:X,shuffle_library:targeted_player
+Typhoid Rats|black 1|black|common|1|1|||creature|Rat%keyword|Deathtouch
+Ulcerate|black 1|black|uncommon|||||instant%triggered|resolved||add_counter:creature.player:-3/-3:end_of_turn,lose_life:player:3
+Unmake the Graves|black 1,colorless 4|black|common|||||instant%keyword|Convoke%triggered|resolved||transfer_card:creature.player:graveyard.player:hand:.player0-2
+Wall of Limbs|black 1,colorless 2|black|uncommon|0|3|||creature|Zombie,Wall%keyword|Defender%triggered|gain_life:player||add_counter:self:+1/+1%activated||black 2,colorless 5,sacrifice self|lose_life:player/opponent:power_self
+Waste Not|black 1,colorless 1|black|rare|||||enchantment%triggered|resolved||enchant:player%triggered|discard:creature.opponent||play_token:1:creature:Zombie:black:2:2%triggered|discard:land.opponent||add_mana:player:black:2%triggered|discard:non_creature.opponent&non_land.opponent|draw_card:player:1
+Witch's Familiar|black 1,colorless 2|black|common|2|3|||creature|Frog
+Xathrid Slyblade|black 1,colorless 2|black|uncommom|2|1|||creature|Human|Assassin%keyword|Hexproof%activated||black 1,colorless 3|lose_ability:self:Hexproof:end_of_turn,gain_ability:self:First_Strike:end_of_turn,gain_ability:self:Deathtouch:end_of_turn
+Zof Shade|black 1,colorless 3|black|common|2|2|||creature|Shade%activated||black 1,colorless 2|add_counter:self:+2/+2:end_of_turn
+Zombie Token||black|token|||||creature|Zombie
+Aeronaut Tinkerer|blue 1,colorless 2|blue|common|2|3|||creature|Human|Artificer%static||control_card artifact.player|gain_ability:self:Flying
+Aetherspouts|blue 2,colorless 3|blue|rare|||||instant%triggered|resolved||transfer_card:all_creatures.any..attacking:battlefield:library.card_owner:top/bottom
+Amphin Pathmage|blue 1,coloress 3|blue|common|3|2|||creature|Salamander|Wizard%activated||blue 1,colorless 2|gain_ability:creature.any:Unblockable:end_of_turn
+Chasm Skulker|blue 1,colorless 2|blue|rare|1|1|||creature|Squid,Horror%triggered|draw_card:player||add_counter:self:+1/+1%triggered|death:self||play_token:counters_self:creature:Squid:blue:1:1::Islandwalk
+Chief Engineer|blue 1,coloress 1|blue|rare|1|3|||creature|Vedalken|Artificer%static|||gain_ability:all_artifacts.player:Convoke
+Chronostutter|blue 1,colorless 5|blue|common|||||instant%triggered|resolved||transfer_card:creature.any::library.card_owner:top-1
+Coral Barrier|blue 1,colorless 2|blue|common|1|3|||creature|Wall%keyword|Defender%triggered|zone_change:battlefield||play_token:1:creature:Squid:blue:1:1::Islandwalk
+Diffusion Sliver|blue 1,colorless 1|blue|uncommon|1|1|||creature|Sliver%triggered|targeted:creature.player.Sliver:spell.opponent/ability.opponent|prevent opponent,coloress 2|counter:spell.opponent/ability.opponent
+Dissipate|blue 2,colorless 1|blue|uncommon|||||instant%triggered|resolved||counter:spell.any,exile:spell.any.target
+Divination|blue 1,colorless 2|blue|common|||||sorcery%triggered|resolved||draw_card:player:2
+Encrust|blue 2,colorless 1|blue|common|||||enchantment|Aura%triggered|resolved||enchant:creature.any/artifact.any%static|||disable:self:untap,disable:self:activated_abilities
+Ensoul Artifact|blue 1,colorless 1|blue|uncommon|||||enchantment|Aura%triggered|resolved||enchant:artifact.any%static|||add_type:self:creature.5.5
+Frost Lynx|blue 1,colorless 2|blue|common|2|2|||creature|Elemental,Cat%triggered|zone_change:battlefield||tap:creature.opponent,disable:creature.opponent.target:untap:next_untap_step
+Fugitive Wizard|blue 1|blue|common|1|1|||creature|Human|Wizard
+Glacial Crasher|blue 2,colorless 4|blue|common|5|5|||creature|Elemental%keyword|Trample%static||prevent player,card_in_zone land.any.Mountain:battlefield|disable:self:attack
+Hydrosurge|blue 1|blue|common|||||instant%triggered|resolved||add_counter:creature.any:-5/0:end_of_turn
+Illusory Angel|blue 1,colorless 2|blue|uncommon|4|4|||creature|Angel,Illusion%keyword|Flying%static||cast_spell_count 1|cannot_cast
+Into the Void|blue 1,colorless 3|blue|uncommon|||||sorcery%triggered|resolved||transfer_card:creature.any:battlefield:hand.card_owner::0-2

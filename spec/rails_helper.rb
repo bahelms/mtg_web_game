@@ -39,7 +39,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    save_tables = %w[formats supertypes types type_classes subtypes keyword_abilities]
+    DatabaseCleaner.clean_with(:truncation, except: save_tables)
   end
 
   config.before(:each) do
