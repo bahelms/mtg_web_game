@@ -1,0 +1,10 @@
+#= require ./deck_builder/store
+#= require_tree ./deck_builder/models
+#= require_tree ./deck_builder/controllers
+#= require_tree ./deck_builder/views
+#= require_tree ./deck_builder/helpers
+#= require_tree ./deck_builder/components
+#= require_tree ./deck_builder/templates
+#= require_tree ./deck_builder/routes
+#= require ./deck_builder/router
+#= require_self

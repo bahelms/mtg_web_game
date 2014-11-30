@@ -4,7 +4,7 @@
       .container-fluid
         %ul.nav.navbar-nav
           = link_to "Lobby", root_path, class: "navbar-brand"
-          = link_to "Deck Builder", "#", class: "navbar-brand"
+          = link_to "Deck Builder", deck_builder_path, class: "navbar-brand"
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to "Profile", user_path(current_user)

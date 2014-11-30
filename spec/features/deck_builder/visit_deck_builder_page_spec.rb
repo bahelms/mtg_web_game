@@ -10,5 +10,7 @@ feature "Visit the Deck Builder" do
     click_link "Deck Builder"
   end
 
-  it { pending "Take the Ember tutorial first"; fail }
+  scenario "loads the deck builder ember app" do
+    expect(subject).to have_content "Hey There!"
+  end
 end
