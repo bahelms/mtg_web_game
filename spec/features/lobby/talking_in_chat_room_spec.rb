@@ -18,7 +18,7 @@ feature "Talking to users in the lobby chat room" do
   scenario "typing text and pressing Send updates the chat text area" do
     # text = "Hey there Sally Jones!"
     # send_message text
-    # expect(subject).to have_selector("lobby_chat_box", text: text)
+    # expect(subject).to have_selector("#lobby_chat_box", text: text)
     pending "can't test websockets/js"
     fail
   end

@@ -31,6 +31,7 @@ class LobbyChatController
   addNewMessage: ->
     @dispatcher.bind "add_new_message", (response) =>
       @$lobbyChatBox.append(response.message)
+      @$lobbyChatBox[0].scrollTop = @$lobbyChatBox[0].scrollHeight
 
   currentUsersList: ->
     @dispatcher.bind "current_users_list", (response) =>
@@ -38,16 +39,16 @@ class LobbyChatController
 
   ## Triggers ##
 
+  sendMessage: ->
+    if @$lobbyChatInput.val() != ""
+      @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
+      @$lobbyChatInput.val("")
+
   clickSendButton: ->
-    @$submitButton.click =>
-      if @$lobbyChatInput.val() != ""
-        @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
-        @$lobbyChatInput.val("")
+    @$submitButton.click => @sendMessage()
 
   pressEnterToSend: ->
     $(document).on "keypress", (event) =>
-      if @$lobbyChatInput.is(":focus") and event.which == 13 and
-      @$lobbyChatInput.val() != ""
-        @dispatcher.trigger "new_message", message: @$lobbyChatInput.val()
-        @$lobbyChatInput.val("")
+      if @$lobbyChatInput.is(":focus") and event.which == 13
+        @sendMessage()
 
