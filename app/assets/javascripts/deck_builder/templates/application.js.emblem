@@ -1,0 +1,12 @@
+section#filter_container
+  | Filter
+
+section#cards_container
+  | Cards
+
+section#decks_list
+  | Decks
+    
+section#deck_container
+  | Deck
+
