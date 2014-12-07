@@ -5,5 +5,4 @@ DeckBuilder.Router.reopen
   rootURL: "/deck_builder/"
 
 DeckBuilder.Router.map ->
-  @resource "cards", path: "/"
 

@@ -1,5 +1,5 @@
 section#filter_container
-  | Filter
+  = render "filter"
 
 section#cards_container
   | Cards

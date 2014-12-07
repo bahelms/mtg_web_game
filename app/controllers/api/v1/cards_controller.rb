@@ -5,3 +5,4 @@ class Api::V1::CardsController < ApplicationController
     respond_with Card.all
   end
 end
+

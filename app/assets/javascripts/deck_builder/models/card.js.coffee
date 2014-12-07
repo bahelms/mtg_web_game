@@ -6,8 +6,8 @@ DeckBuilder.Card = DS.Model.extend
   power: DS.attr("number")
   toughness: DS.attr("number")
   dualCard: DS.attr("boolean")
-  cardSet: DS.belongsTo("cardSet")
+  cardSet: DS.belongsTo("card_set")
   type: DS.belongsTo("type")
-  superType: DS.belongsTo("superType")
-  typeClass: DS.belongsTo("typeClass")
+  supertype: DS.belongsTo("supertype")
+  typeClass: DS.belongsTo("type_class")
   
