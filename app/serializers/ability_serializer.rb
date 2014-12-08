@@ -1,8 +1,8 @@
 class AbilitySerializer < ActiveModel::Serializer
-  attributes :id, :type, :trigger, :cost, :effects, :card
+  attributes :id, :type, :ability_trigger, :cost, :effects
 
-  def card
-    object.card.id
+  def ability_trigger
+    object.trigger
   end
 end
 
