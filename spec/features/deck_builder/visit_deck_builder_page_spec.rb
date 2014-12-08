@@ -12,6 +12,7 @@ feature "Visit the Deck Builder" do
 
   scenario "loads the deck builder ember app" do
     pending
+    fail
   end
 end
 
