@@ -3,5 +3,5 @@ DeckBuilder.Ability = DS.Model.extend
   trigger: DS.attr("string")
   cost: DS.attr("string")
   effects: DS.attr("string")
-
+  card: DS.belongsTo("card")
 
