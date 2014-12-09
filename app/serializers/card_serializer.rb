@@ -1,10 +1,9 @@
 class CardSerializer < ActiveModel::Serializer
-  embed :ids, include: true
   attributes :id, :name, :mana_cost, :colors, :rarity, :power, :toughness,
     :dual_card, :card_set, :type, :supertype, :type_class
-  has_many :keyword_abilities
-  has_many :abilities
-  has_many :subtypes
+  has_many :keyword_abilities, embed: :ids
+  has_many :abilities, embed: :ids
+  has_many :subtypes, embed: :ids
 
   def card_set
     object.card_set.name
