@@ -1,12 +1,12 @@
-section#filter_container
+section#filter_container.col-xs-4
   = render "filter"
 
-section#cards_container
+section#cards_container.col-xs-8
   | Cards
 
-section#decks_list
+section#decks_list.col-xs-4
   | Decks
     
-section#deck_container
+section#deck_container.col-xs-8
   | Deck
 
