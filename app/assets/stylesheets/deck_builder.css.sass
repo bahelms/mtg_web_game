@@ -1,5 +1,21 @@
 #deck_builder_ember_container
-  section
+  input:not([type="submit"]):not([type="checkbox"])
+    +box_shadow(0, 0)
+    color: white
+    background: #373737
+    padding: 0 10px
+    width: 250px
+    border: 0
+    border-radius: 5px
+    height: 25px
+    text-shadow: 1px 1px 1px black
+
+  #cards_container
+    height: 300px
+
+  #filter_div, #cards_div, #decks_list_div, #deck_div
     color: white
     border: 1px solid #4c85cf
+
+  #filter_input
 

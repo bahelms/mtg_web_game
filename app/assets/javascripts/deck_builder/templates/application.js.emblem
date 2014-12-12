@@ -1,12 +1,14 @@
-section#filter_container.col-xs-4
-  = render "filter"
+section#cards_container
+  #filter_div.col-xs-3
+    = render "filter"
 
-section#cards_container.col-xs-8
-  | Cards
+  #cards_div.col-xs-9
+    | Cards
 
-section#decks_list.col-xs-4
-  | Decks
-    
-section#deck_container.col-xs-8
-  | Deck
+section#decks_container
+  #decks_list_div.col-xs-4
+    | Decks
+      
+  #deck_div.col-xs-8
+    | Deck
 
