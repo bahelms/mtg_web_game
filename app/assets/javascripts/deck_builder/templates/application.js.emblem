@@ -3,12 +3,12 @@ section#cards_container
     = render "filter"
 
   #cards_div.col-xs-9
-    | Cards
+    = render "cards" 
 
 section#decks_container
   #decks_list_div.col-xs-4
-    | Decks
+    = render "decks"
       
   #deck_div.col-xs-8
-    | Deck
+    = render "deck"
 
