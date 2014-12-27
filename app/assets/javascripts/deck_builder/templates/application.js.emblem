@@ -1,9 +1,5 @@
 section#cards_container
-  #filter_div.col-xs-3
-    = render "filter"
-
-  #cards_div.col-xs-9
-    = render "cards" 
+  = outlet
 
 section#decks_container
   #decks_list_div.col-xs-4

@@ -1,3 +1,8 @@
-each card in cards
-  card.name
+#filter_div.col-xs-3
+  = render "filter"
+
+#cards_div.col-xs-9
+  ul
+    each card in controller
+      li = card.name
 
