@@ -3,23 +3,25 @@
 
 #cards_div.col-xs-9
   table.table.table-hover.table-condensed
-    tr
-      th Name
-      th Mana Cost
-      th Type
-      th Power/Toughness
-      th Set
-      th Rarity
-    each card in controller
+    thead
       tr
-        td = card.name
-        td = manaCostImages card.manaCost
-        td = card.type
-        td
-          = card.power
-          if card.toughness
-            | /
-          = card.toughness
-        td = card.cardSet
-        td = card.rarity
+        th Name
+        th Mana Cost
+        th Type
+        th Power/Toughness
+        th Set
+        th Rarity
+    tbody
+      each card in controller
+        tr
+          td = card.name
+          td = manaCostImages card.manaCost
+          td = card.type
+          td
+            = card.power
+            if card.toughness
+              | /
+            = card.toughness
+          td = cardSetIcon card.cardSetCode
+          td = card.rarity
 

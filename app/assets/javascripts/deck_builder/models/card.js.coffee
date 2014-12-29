@@ -6,7 +6,7 @@ DeckBuilder.Card = DS.Model.extend
   power: DS.attr("number")
   toughness: DS.attr("number")
   dualCard: DS.attr("boolean")
-  cardSet: DS.attr("string")
+  cardSetCode: DS.attr("string")
   type: DS.attr("string")
   supertype: DS.attr("string")
   typeClass: DS.attr("string")
