@@ -6,9 +6,9 @@ Ember.Handlebars.helper "manaCostImages", (manaCost) ->
     switch color
       when "black" then "b"
       when "blue" then "u"
-      when "white" then "w"
-      when "red" then "r"
       when "green" then "g"
+      when "red" then "r"
+      when "white" then "w"
       when "colorless" then "colorless"
 
   manaCostHtml = ""

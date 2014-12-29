@@ -5,7 +5,11 @@ class CardSetImporter
   end
 
   def card_set_name
-    @csv.first
+    @csv.first.split("|").first
+  end
+
+  def card_set_code
+    @csv.first.split("|").last
   end
 
   def import
@@ -26,7 +30,7 @@ class CardSetImporter
     def create_card_set
       card_set = CardSet.where(name: card_set_name).first
       card_set.destroy if card_set
-      CardSet.create!(name: card_set_name)
+      CardSet.create!(name: card_set_name, code: card_set_code)
     end
 
     def create_card(attrs, card_set)
