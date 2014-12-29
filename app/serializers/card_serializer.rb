@@ -20,5 +20,9 @@ class CardSerializer < ActiveModel::Serializer
   def type_class
     object.type_class.name if object.type_class
   end
+
+  def mana_cost
+    object.mana_cost.to_s.gsub(/\s|"|{|}/, "")
+  end
 end
 
